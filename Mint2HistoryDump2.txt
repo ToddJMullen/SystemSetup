@@ -1,0 +1,1529 @@
+    1  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    2  sudo apt-get install -y nodejs
+    3  sudo . netbeans-8.2-php-linux-x64.sh
+    4  sudo netbeans-8.2-php-linux-x64.sh
+    5  chmod +x netbeans-8.2-php-linux-x64.sh
+    6  sudo ./netbeans-8.2-php-linux-x64.sh
+    7  unzip android-studio-ide-173.4819257-linux.zip
+    8  cd ~/Dev
+    9  cd ..
+   10  ls
+   11  cd WebDev/
+   12  ls
+   13  cd ..
+   14  ls
+   15  cd ..
+   16  ls
+   17  cd ..
+   18  ls
+   19  cd ~
+   20  ls
+   21  cd Desktop/
+   22  ls
+   23  ld
+   24  ls
+   25  cd ..
+   26  l
+   27  cd ..
+   28  ls
+   29  cd todd/
+   30  ls
+   31  ls -a
+   32  sudo npm install -c cordova
+   33  sudo npm install -g ionic
+   34  -accel-check
+   35  cd Downloads/
+   36  cd ../WebDev/
+   37  ls
+   38  cd an
+   39  cd android-studio/
+   40  ls
+   41  cd bin/
+   42  ./studio.sh
+   43  egrep -c '(vmx|svm)' /proc/cpuinfo
+   44  cat /sys/hypervisor/properties/capabilities
+   45  kvm-ok
+   46  egrep -c ' lm ' /proc/cpuinfo
+   47  uname -m
+   48  sudo apt install cpu-checker
+   49  kvm-ok
+   50  sudo /usr/sbin/kvm-ok
+   51  sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+   52  sudo aptitude install virt-viewer
+   53  sudo adduser `id -un` libvirtd
+   54  virsch list all
+   55  virsh list all
+   56  virsh list --all
+   57  ld
+   58  ls
+   59  cd WebDev/
+   60  ls
+   61  mkdir ps && cd $_
+   62  git clone https://github.com/ToddJMullen/ps-vue-build-bot.git
+   63  sudo apt install git
+   64  git clone https://github.com/ToddJMullen/ps-vue-build-bot.git
+   65  cd ps-vue-build-bot/
+   66  . code
+   67  cd WebDev/ps/ps-vue-build-bot/
+   68  ./ code
+   69  ls
+   70  . code
+   71  cd WebDev/ps/ps-vue-build-bot/
+   72  git status
+   73  git checkout dev
+   74  git pull
+   75  code .
+   76  gedit ~/.bashrc
+   77  . ~/.bashrc
+   78  gedit ~/.bashrc
+   79  . ~/.bashrc
+   80  gedit ~/.bashrc
+   81  . ~/.bashrc
+   82  gedit ~/.bashrc
+   83  . ~/.bashrc
+   84  gedit ~/.bashrc
+   85  . ~/.bashrc
+   86  gedit ~/.bashrc
+   87  . ~/.bashrc
+   88  gedit ~/.bashrc
+   89  . ~/.bashrc
+   90  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+   91  sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+   92  top
+   93  free -m
+   94  top
+   95  man top
+   96  top -t
+   97  man top
+   98  pkill 12439
+   99  sudo pkill 12439
+  100  pkill 12439
+  101  pkill 12488
+  102  kill chromium-browse
+  103  kill -9
+  104  top -H
+  105  top
+  106  top X
+  107  top -X
+  108  top -x
+  109  top
+  110  top
+  111  cd ../
+  112  ls
+  113  cd build-a-bot-server/
+  114  npm run serve
+  115  npm run start
+  116  cd ../build-a-bot-server/
+  117  npm start
+  118  sudo apt autoclean
+  119  sudo apt-get clean
+  120  sudo apt autoremove
+  121  cd ../build-a-bot-server/
+  122  npm start
+  123  top -i
+  124  top
+  125  vmstat
+  126  mpstat
+  127  sudo apt install sysstat
+  128  history
+  129  ls
+  130  cd Calibre\ Library/
+  131  ls
+  132  cd Linux/
+  133  ls
+  134  history > LinuxHistory1.txt
+  135  gedit LinuxHistory1.txt
+  136  history 2> LinuxHistory2.txt
+  137  gedit LinuxHistory2.txt
+  138  history | tee LinuxHistory2.txt
+  139  gedit LinuxHistory2.txt
+  140  rm LinuxHistory2.txt
+  141  sudo apt install cputool
+  142  sudo apt-get install dkms git libpthread-stubs0-dev
+  143  ls
+  144  cd ~
+  145  ls
+  146  cd WebDev/
+  147  ls
+  148  git clone https://github.com/cyring/CoreFreq.git
+  149  cd CoreFreq/
+  150  make
+  151  git status
+  152  git branch
+  153  git lg
+  154  git log
+  155  make
+  156  ls
+  157  gedit README.md
+  158  vmstat
+  159  lsof
+  160  htop
+  161  iotop
+  162  sudo apt install iotop
+  163  iotop
+  164  sudo iotop
+  165  cd ~/Calibre\ Library/Linux/
+  166  history | tee LinuxHistory1.txt
+  167  gedit LinuxHistory1.txt
+  168  pidof chromium
+  169  top
+  170  pidof chromium-browser
+  171  cputool --cpu-limit 40 -p 22522
+  172  cd ..
+  173  ls
+  174  cd ps-vue-build-bot/
+  175  npm serve
+  176  npm start
+  177  vue serve
+  178  nvm --v
+  179  nvm --version
+  180  node --version
+  181  npm run serve
+  182  top
+  183  fish
+  184  sudo apt install fish
+  185  fish
+  186  cd WebDev/
+  187  ls
+  188  cd ps/Vue/
+  189  ls
+  190  cd build-a-bot-server/
+  191  vue serve
+  192  history
+  193  npm run serve
+  194  npm run start
+  195  ls
+  196  gedit package.json
+  197  cd ../
+  198  ls
+  199  cd ps-vue-build-bot/
+  200  git checkout master
+  201  git merge dev
+  202  git checkout dev
+  203  cat /var/log/Xorg.0.log
+  204  gedit /var/log/lightdm/lightdm.log
+  205  sudo gedit /var/log/lightdm/lightdm.log
+  206  whoispid 1610
+  207  top
+  208  ng g service FrameworkConfig --spec=false
+  209  git checkout dev
+  210  git status
+  211  ng g component top-bar --prefix=false --spec=false --skip-import=true
+  212  ng g component status-bar --prefix=false --spec=false --skip-import=true
+  213  git push
+  214  ng g directive --spec=false --prefix=false --skip-import=true
+  215  ng g directive screen-large --spec=false --prefix=false --skip-import=true
+  216  ng g directive screen-small --spec=false --prefix=false --skip-import=true
+  217  ng g component menu-item --prefix=fw --spec=false --skip-import=true
+  218  ng g component dashboard --spec=false
+  219  ng g c countries
+  220  ng g c settings --spec=false
+  221  ng g interface menu-item
+  222  ng g component county-detail --spec=false
+  223  ng g component county-list --spec=false
+  224  ng g component county-maint --spec=false
+  225  ng g c popup-menu --skip-import=true --prefix=fw --spec=false
+  226  git reset HEAD^
+  227  ng g component country-maint --spec=false
+  228  ng g component country-list --spec=false
+  229  ng g component country-detail --spec=false
+  230  git reser HEAD^
+  231  git reset HEAD^
+  232  ng g c authenticated-user --spec=false
+  233  ng g c sign-in --spec=false --prefix=fw --skip-import=true
+  234  ng g c register-user --spec=false --prefix=fw --skip-import=true
+  235  ng g s app-data
+  236  ng g c dynamic-form --prefix=fw --spec=false --skip-import=true
+  237  ng g c dynamic-field --spec=false --prefix=fw --skip-import=true
+  238  top -i
+  239  ng g c Panel --prefix=fw --spec=false --skip-import=true
+  240  git log
+  241  git reset HEAD^
+  242  git log
+  243  git reset HEAD^
+  244  ng g c CountryPanel --spec=false
+  245  ng g c ImagePanel
+  246  git push
+  247  git pull
+  248  cd ~/WebDev/ps/angular/
+  249  ls
+  250  cd ps-green-nations/
+  251  git pull
+  252  cd WebDev/
+  253  ls
+  254  cd ps/
+  255  ls
+  256  mkdir angular
+  257  cd angular/
+  258  ls
+  259  git clone https://github.com/ToddJMullen/ps-green-nations.git
+  260  cd ps-green-nations/
+  261  git branch
+  262  git pull
+  263  top -i
+  264  sudo pkill 13300
+  265  top
+  266  git checkout dev
+  267  npm install
+  268  git push
+  269  git status
+  270  git checkout dev
+  271  git pull
+  272  git unstage
+  273  git reset HEAD cc.properties
+  274  git checkout -- cc.properties
+  275  git reset HEAD \*
+  276  git checkout -- .
+  277  git log
+  278  code .
+  279  ng serve
+  280  top -i
+  281  top -i
+  282  cd WebDev/
+  283  ls
+  284  cd Ionic/markets/
+  285  ionic serve
+  286  ls
+  287  npm install angularfire2@4.0.0-rc.2 --save --save-exact
+  288  npm install firebase@4.4.0 --save --save-exact
+  289  npm install promise-polyfill --save
+  290  ionic generate page login
+  291  ionic generate page register
+  292  ionic generate provider .service
+  293  git push
+  294  ionic generate provider reward.service
+  295  ionic generate page account
+  296  cd WebDev/ps/
+  297  ls
+  298  mkdir Ionic && cd $_
+  299  git clone https://github.com/ToddJMullen/ionic-e2e.git
+  300  git checkout dev
+  301  cd ionic-e2e/
+  302  git checkout dev
+  303  git pull
+  304  ionic push get master
+  305  git push ionic master
+  306  ionic serve
+  307  top -i
+  308  netmon
+  309  gedit ~/.bashrc
+  310  . ~/.bashrc
+  311  explain pwd
+  312  man pwd
+  313  explain "apropos -a"
+  314  man apropos
+  315  apropos concat regex -a
+  316  apropos -a "concat regex"
+  317  apropos -a "concat"
+  318  apropos -a join
+  319  apit-get install python
+  320  sudo apt-get install python
+  321  apt-get install python-pip
+  322  sudo apt-get install python-pip
+  323  pip install docopt pygments
+  324  pip install --upgrade pip
+  325  sudo pip install docopt pygments
+  326  sudo pip install --upgrade pip
+  327  sudo apt-get install python-pip
+  328  pip install docopt pygments
+  329  sudo apt-get uninstall python-pip
+  330  sudo apt-get remove python-pip
+  331  apt-get update
+  332  sudo apt-get update
+  333  sudo apt-get install python-pip
+  334  sudo pip install docopt pygments
+  335  git clone https://github.com/chrisallenlane/cheat.git
+  336  cd cheat/
+  337  python setup.py install
+  338  sudo python setup.py install
+  339  cheat -v
+  340  sudo python setup.py uninstall
+  341  sudo python setup.py remove
+  342  echo $PATH
+  343  . ~/.bashrc
+  344  echo $GRADLE_HOME
+  345  gradle -v
+  346  cd $GRADLE_HOME
+  347  gedit ~/.bashrc
+  348  source ~/.bashrc
+  349  cd $GRADLE_HOME
+  350  cd ~
+  351  gradle -v
+  352  cd WebDev/Archi/
+  353  ls -l
+  354  ./Archi-Ubuntu.sh
+  355  ./ ~/Downloads/Linux/Visual_Paradigm_CE_15_1_20180807_Linux64.sh
+  356  cd ~/Downloads/Linux/
+  357  ls
+  358  chmod +x Visual_Paradigm_CE_15_1_20180807_Linux64.sh
+  359  ./Visual_Paradigm_CE_15_1_20180807_Linux64.sh
+  360  kdeinit5
+  361  sudo apt install kinit
+  362  kdeinit5
+  363  kioslave
+  364  sudo apt-get install kio
+  365  kioslave
+  366  kdeinit5
+  367  unetbootin
+  368  sudo apt install unetbootin
+  369  history
+  370  vimtutor
+  371  unetbootin
+  372  top
+  373  unetbootin
+  374  sudo apt-get install extlinux
+  375  unetbootin
+  376  ls
+  377  vim TEST
+  378  sudo apt-get update
+  379  3
+  380  gedit .bashrc
+  381  java -version
+  382  where is java
+  383  whereis java
+  384  cd /home/todd/WebDev/java/
+  385  ls
+  386  wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz
+  387  wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz
+  388  ls
+  389  tac -zxvf jdk-11.0.1_linux-x64_bin.tar.gz
+  390  tar -zxvf jdk-11.0.1_linux-x64_bin.tar.gz
+  391  cd jdk-11.0.1/
+  392  ls
+  393  update-alternatives --install /usr/bin/java java ~/WebDev/java/jdk-11.0.1 100
+  394  sudo update-alternatives --install /usr/bin/java java ~/WebDev/java/jdk-11.0.1 100
+  395  sudo update-alternatives --config java
+  396  java -version
+  397  sudo update-alternatives --install /usr/bin/javac javac ~/WebDev/java/jdk-11.0.1/bin/javac
+  398  sudo update-alternatives --install /usr/bin/javac javac ~/WebDev/java/jdk-11.0.1/bin/javac 100
+  399  sudo update-alternatives --install /usr/bin/java java ~/WebDev/java/jdk-11.0.1/bin/java 100
+  400  sudo update-alternatives --config java
+  401  sudo update-alternatives --config javac
+  402  sudo update-alternatives --install /usr/bin/jar jar ~/WebDev/java/jdk-11.0.1/bin/jar 100
+  403  sudo update-alternatives --config jar
+  404  echo JAVA_HOME
+  405  echo $JAVA_HOME
+  406  echo $JRE_HOME
+  407  echo $PATH
+  408  java -version
+  409  cd /etc/
+  410  ls
+  411  sudo gedit /etc/bash.bashrc
+  412  sudo gedit ~/.bashrc
+  413  gedit ~/.profile
+  414  . ~/.profile
+  415  . ~/.bashrc
+  416  java -version
+  417  echo $JAVA_HOME
+  418  echo $JRE_HOME
+  419  echo $PATH
+  420  sudo gedit ~/.bashrc
+  421  gedit ~/.profile
+  422  cd /home/todd/WebDev/java
+  423  ls
+  424  tar -zxvf apache-maven-3.6.0-bin.tar.gz
+  425  gedit ~/.profile
+  426  mvn -version
+  427  . ~/.profile
+  428  gedit ~/.profile
+  429  . ~/.profile
+  430  gedit ~/.profile
+  431  . ~/.profile
+  432  mvn -version
+  433  echo $M2
+  434  echo $PATH
+  435  gedit ~/.profile
+  436  . ~/.profile
+  437  mvn -version
+  438  cd WebDev/java/
+  439  ls
+  440  mkdir spring-boot
+  441  rm -R spring-boot
+  442  ls
+  443  tar -zxvf spring-boot-cli-2.1.2.RELEASE-bin.tar.gz
+  444  ls
+  445  mv -R spring-2.1.2.RELEASE/ spring-boot-2.1.2
+  446  mv -r spring-2.1.2.RELEASE/ spring-boot-2.1.2
+  447  mv  spring-2.1.2.RELEASE/ spring-boot-2.1.2
+  448  ls
+  449  mv spring-boot-2.1.2/ spring-boot
+  450  cd $_
+  451  ls
+  452  gedit ~/.profile
+  453  cd WebDev/java/
+  454  ls
+  455  rm -R spring-boot
+  456  ls
+  457  tar zxf spring-boot-cli-2.1.2.RELEASE-bin.tar.gz
+  458  ls
+  459  mkdir
+  460  mkdir spring-boot
+  461  ls
+  462  mv spring-2.1.2.RELEASE spring-boot/spring-2.1.2.RELEASE
+  463  cd spring-boot/
+  464  ls
+  465  source ~/.profile
+  466  echo $M2
+  467  echo $SPRING_HOME
+  468  spring --version
+  469  echo $PATH
+  470  gedit ~/.profile
+  471  . ~/.profile
+  472  echo $SPRING_HOME
+  473  spring --version
+  474  cd ..
+  475  ls
+  476  cd ../ps/
+  477  ls
+  478  cd Java/
+  479  ls
+  480  cd Spring/
+  481  spring init --dependencies=web TestSpringCliApp
+  482  ls
+  483  cd TestSpringCliApp/
+  484  ls
+  485  cd src/
+  486  ls
+  487  cd ../..
+  488  echo "spring init --dependencies=web TestSpringCliApp" > TestSpringCliAppReadMe.txt
+  489  ls
+  490  gedit TestSpringCliAppReadMe.txt
+  491  spring TestSpringCliApp
+  492  cd TestSpringCliApp/
+  493  ls
+  494  cd src/
+  495  ls
+  496  cd main/
+  497  ls
+  498  cd resources/
+  499  ls
+  500  cd ../../../..
+  501  cd TestSpringCliApp/
+  502  cd WebDev/ps/Java/Spring/CreatingFirstSpringBootApp/
+  503  ls
+  504  git status
+  505  cd das-boot/
+  506  git status
+  507  git push
+  508  git config --global push.default simple
+  509  git push
+  510  git status
+  511  cd WebDev/ps/Java/Spring/CreatingFirstSpringBootApp/
+  512  ls
+  513  cd das-boot/
+  514  git status
+  515  git add src/main/resources/application-test.properties
+  516  git add src/main/resources/application.properties
+  517  gedit .gitignore
+  518  git status
+  519  gedit .gitignore
+  520  git status
+  521  git add .gitignore
+  522  git commit -m "Add application.properties example"
+  523  git push
+  524  git branch
+  525  git push dev
+  526  ls
+  527  git diff
+  528  git add .
+  529  git commit -m "pom.xml, Add Db dependencies
+  530  - spring-boot-starter-data-jpa
+  531  - flyway
+  532  git commit -m "pom.xml, Add Db dependencies
+  533  - spring-boot-starter-data-jpa
+  534  - flyway "
+  535  git commit -m "pom.xml, Add Db dependencies
+  536  - spring-boot-starter-data-jpa
+  537  - flyway
+  538  git commit -m "pom.xml, Add Db dependencies
+  539  git commit -m "pom.xml, Add Db dependencies
+  540  git add .
+  541  git commit -m "Add initial Db dependencies
+  542  - spring-boot-starter=data-jpa
+  543  - H2 & Flyway"
+  544  git push
+  545  git push -U
+  546  git config global
+  547  git config --global
+  548  git config.helper store
+  549  git config credential.helper store
+  550  git pull
+  551  git push
+  552  git add .
+  553  git status
+  554  git rm target/classes/*
+  555  git rm target/classes/META-INF/*
+  556  git rm -r target/classes/META-INF/*
+  557  git rm -r target/classes/META-INF/com.boot/das-boot/pom.xml
+  558  git status
+  559  git rm -r target/classes/META-INF/maven/com.boot/das-boot/pom.xml
+  560  git rm -rf target/classes/META-INF/maven/
+  561  git status
+  562  git add .
+  563  git commit -m "Add PersistenceConfiguration.java and secondary Db persistence option"
+  564  gitrm -rf target/classes/META-INF/maven/*
+  565  git rm -rf target/classes/*
+  566  git ad .
+  567  git add .
+  568  git commit -m "Mark Shipwreck.java as a JPA Entity & identify its PK field"
+  569  git status
+  570  git diff
+  571  git commit
+  572  git add .
+  573  git commit -m "Add JPA ShipwreckRepository.java & replace Mock repo method stubs."
+  574  git push
+  575  cd WebDev/ps/Java/Spring/CreatingFirstSpringBootApp/das-boot/
+  576  git status
+  577  gedit .gitignore
+  578  git status
+  579  git rm -rf target/*
+  580  git diff
+  581  java -version
+  582  jdk -version
+  583  javac -version
+  584  jre -version
+  585  cd WebDev/ps/Java/Spring/CreatingFirstSpringBootApp/das-boot/
+  586  git status
+  587  git add .
+  588  git status
+  589  git commit -m "Add initial Test base ShipwreckController.java
+  590  - Add example og junit test assertion
+  591  - Replace junit test assertion with hamcrest syntax"
+  592  git status
+  593  git add .
+  594  git status
+  595  git commit -m "Create base Web Application Test for the Shipwreck API"
+  596  git push
+  597  git status
+  598  git diff
+  599  git add .
+  600  git commit -m "Formatting only / preference changes"
+  601  git push
+  602  git ..
+  603  cd ..
+  604  ls
+  605  mv -r GitDl/* GitDls/
+  606  mv -R GitDl/* GitDls/
+  607  mv GitDl/* GitDls/
+  608  ls
+  609  cd GitDls
+  610  ls
+  611  cd ../GitDl
+  612  ls
+  613  cd ..
+  614  ls
+  615  cd ~/WebDev/ps/Java/Spring/
+  616  ls
+  617  cd spring_sample/
+  618  git init
+  619  gedit README.md
+  620  ls
+  621  git status
+  622  echo "target" >> .gitignore
+  623  git status
+  624  git add .
+  625  git commit -m "Initial commit for a simple Maven project
+  626  - Change default Java version from 1.5 to 1.8
+  627  -- pom.xaml, Add <build> configuration block"
+  628  git status
+  629  git checkout master
+  630  git reset HEAD
+  631  git status
+  632  git add .
+  633  git commit -m "Fix configuration property name typo"
+  634  git add .
+  635  git commit -m "Add base Customer class"
+  636  git add .
+  637  git commit -m "Add Hibernate/implementation specific class for example"
+  638  git add .
+  639  git commit -m "Add CustomerServiceImpl with hard coded HibernateCustomerRepositoryImpl dependency."
+  640  git add .
+  641  git status
+  642  git commit -m "Abstract CustomerService interface from CustomerServiceImpl"
+  643  git status
+  644  git add .
+  645  git commit -m "Add base Application class"
+  646  git status
+  647  git add .
+  648  git commit -m "pom.xml, Add Spring Framework dependency to begin abstractions"
+  649  git push
+  650  git remote add origin https://github.com/ToddJMullen/SpringFundamentalsSample1.git
+  651  git push -u origin master
+  652  git status
+  653  cd ../spring_sample_xml/
+  654  git status
+  655  git add .
+  656  git diff
+  657  ls
+  658  git status
+  659  git commit -m "Rewire spring_sample using setter injection
+  660  - Make renamed copy 'spring_sample_xml' (as per instruction)
+  661  - Add applicationContext.xml to abstract out impl details
+  662  -- Add customerRespository & customerService beans to move
+  663   the CustomerRespository impl provided into the config file
+  664  - Remove the concrete instantiation of the HibernateCustomerRepositoryImpl from the CustomerServiceImpl & replace it
+  665  with a setter method used by Spring / applicationContext.xml to inject the implementation stated in the configuration."
+  666  git add .
+  667  git status
+  668  git commit -m "Change applicationContext.xml setter injection to contructor injection of the CustomerRepository to be used by CustomerServiceImpl"
+  669  git commit --amend
+  670  git add .
+  671  git status
+  672  git commit --amend
+  673  git status
+  674  git add .
+  675  git commit -m "Remove uneeded CustomerServiceImpl import"
+  676  git add .
+  677  git commit -m "Replace explicit contructor DI with use of autowire='constructor' in applicationContext.xml"
+  678  git add .
+  679  git commit -m "Change customer service repo DI config with autowire by type"
+  680  git push
+  681  git status
+  682  git add .
+  683  git commit -m "Edit applicationContect.xml comments"
+  684  git push
+  685  samba -v
+  686  sudo apt install samba
+  687  sudo mkdir /media/mybooklive
+  688  ipconfig
+  689  ifconfig
+  690  tsr -zxf apache-tomcat-8.5.37.tar.gz
+  691  tar -zxf apache-tomcat-8.5.37.tar.gz
+  692  gedit ~/.bashrc
+  693  gedit ~/.profile
+  694  . ~/.profile
+  695  echo $CATALINA_HOME
+  696  echo $PATH
+  697  cd WebDev/ps/Java/Spring/
+  698  ls
+  699  cd SpringFundamentals/
+  700  git status
+  701  cd ../spring_sample/ && git status
+  702  cd ../SpringFundamentals/
+  703  git diff
+  704  git add .
+  705  cd WebDev/ps/Java/Spring/
+  706  ls
+  707  cd spring_sample_xml_annot/
+  708  git status
+  709  git add .
+  710  git commit -m "Add applicationContext.xml with settings for parsing code for annotations."
+  711  git add .
+  712  git status
+  713  git commit -m "Setup autowiring of service & repo class instances
+  714  - Add applicationContext.xml with added context NS to provide the annotation-config & component-scan tags needed
+  715  - CustomerServiceImpl.java, Add @Service('customerService') annotation to mark class as a provided
+  716  -- Add @Autowired to customerRepo var to mark as consumer of the same
+  717  - HibernateCustomerRepositoryImpl.java, Add @Repository('customerRepo') to mark as provider to an autowired instance of the same name."
+  718  git push
+  719  git checkout -b rev-3-autowiring
+  720  git push
+  721  git push --set-upstream origin rev-3-autowiring
+  722  git checkout master
+  723  git reset HEAD^
+  724  git reset --hard HEAD^
+  725  git checkout -b master-unknown-base
+  726  git push --set-upstream origin master-unknown-base
+  727  git checkout -b poor-base-hard-dependencies
+  728  git push --set-upstream origin poor-base-hard-dependencies
+  729  git branch -d master-unknown-base
+  730  git branch
+  731  git checkout rev-3-autowiring
+  732  git log --oneline
+  733  git reset --hard HEAD^
+  734  git fetch
+  735  git diff
+  736  git diff poor-base-hard-dependencies
+  737  git reset --hard HEAD^
+  738  git diff poor-base-hard-dependencies
+  739  git status
+  740  git reset --hard HEAD^
+  741  git diff poor-base-hard-dependencies
+  742  git checkout master
+  743  git diff origin master
+  744  git diff origin/master
+  745  git pull
+  746  git branch
+  747  git checkout -b rev-2-setr-and-constr-injection
+  748  git push --set-upstream origin rev-2-setr-and-constr-injection
+  749  git bramch
+  750  git branch
+  751  git checkout poor-base-hard-dependencies
+  752  git checkout -b rev-1-poor-base-w-hard-deps
+  753  git push --set-upstream origin rev-1-poor-base-w-hard-deps
+  754  git branch
+  755  git checkout -b rev-1-poor-base-w-hard-dependencies
+  756  git push --set-upstream origin rev-1-poor-base-w-hard-dependencies
+  757  git branch
+  758  git branch -d rev-1-poor-base-w-hard-deps
+  759  git branch
+  760  git branch -d poor-base-hard-dependencies
+  761  git branch
+  762  git push *
+  763  git push
+  764  git checkout master
+  765  git log --oneline
+  766  git status
+  767  git log
+  768  git status
+  769  git add .
+  770  git commit -m "Merge rev 3 autowiring into master"
+  771  git push
+  772  git status
+  773  git checkout -b dev
+  774  git push --set-upstream origin dev
+  775  git add  .
+  776  git git commit -m "Disable class level DI auto wiring of CustomerServiceImpl
+  777  - Add member level DI wiring to provide the CustomerRepo instance to be used"
+  778  git commit -m "Disable class level DI auto wiring of CustomerServiceImpl
+  779  - Add member level DI wiring to provide the CustomerRepo instance to be used"
+  780  git push
+  781  git push -u
+  782  git add .
+  783  git commit -m "Replace example member level DI via setter with contructor injection"
+  784  git status
+  785  git add .
+  786  git commit -m "Add DI / @Autowired commentary in applicationContext.xml comments"
+  787  git push
+  788  git set config user.name
+  789  git config user.name = "..."
+  790  git config credential.helper store
+  791  git pull
+  792  git push
+  793  git add .
+  794  git commit -m "Add DI / @Autowired tiered comments"
+  795  git push
+  796  git checkout master
+  797  git merge dev
+  798  git push
+  799  git checkout dev
+  800  git add .
+  801  git commit -m "Add comment on stereotype annotations"
+  802  git push
+  803  git log
+  804  cd ../spring_sample
+  805  git pull
+  806  git log
+  807  git checkout dev
+  808  git log
+  809  git checkout master && git merge dev
+  810  git push
+  811  git credential.helper store
+  812  git config credential.helper store
+  813  git push
+  814  git pull
+  815  ls
+  816  ls -a
+  817  gedit .project
+  818  gedit .gitignore
+  819  git lgoo
+  820  git log
+  821  git status
+  822  git add .
+  823  git commit -m "Correct merged/corrupted '.project' meta file"
+  824  git push
+  825  git checkout -b spring-w-java-only-config
+  826  git commit -m "Spring Configuration Using Java, Initial commit before changes"
+  827  git add .
+  828  git commit -m "Spring Configuration Using Java, Initial commit before changes"
+  829  cd ../SpringFundamentals/
+  830  git add .
+  831  git commit -m "Spring Configuration Using Java, Initial commit before changes"
+  832  git config credentials.helper store
+  833  git push
+  834  git push --set-upstream origin spring-w-java-only-config
+  835  git add .
+  836  git commit -m "pom.xml, Change artifactId
+  837  "
+  838  git add .
+  839  git status
+  840  git commit -m "Change applicationContext.xml autowiring to use of Java only AppConfig creation of needed beans"
+  841  git push
+  842  git checkout master
+  843  git merge spring-w-java-only-config
+  844  git branch
+  845  git log --oneline
+  846  ../spring_sample/ git branch
+  847  cd ../spring_sample/ && git branch
+  848  cd ../SpringFundamentals/
+  849  git branch
+  850  git status
+  851  git pull
+  852  git fetch
+  853  git branch
+  854  git branch -a
+  855  git pull
+  856  git checkout rev-1-poor-base-w-hard-dependencies
+  857  git checkout rev-2-setr-and-constr-injection
+  858  git checkout rev-3-autowiring
+  859  git checkout dev
+  860  git merge master
+  861  git push
+  862  git add .
+  863  git commit -m "Change CustomerServiceImpl to use contructor injection of the Repo
+  864  - Change AppConfig.java to match"
+  865  git status
+  866  git push
+  867  git checkout -b app-config-w-java-autowire
+  868  git status
+  869  git commit -m "Reactivate autowiring of CustomerService in AppConfig via annotations."
+  870  git add .
+  871  git commit -m "Replace @Beans in AppConfig with Autowiring
+  872  - AppConfig, Add @ComponentScan com.ps to mark scope of wiring package
+  873  -- Comment out @Bean methods to provide explicit Repo & Service
+  874  - CustomerServiceImpl & HibernateCustomerRepositoryImpl Add @Repository & @Service to mark them as providers"
+  875  git checkout dev
+  876  git merge app-config-w-java-autowire
+  877  git push
+  878  git checkout app-config-w-java-autowire
+  879  git push
+  880  git push --set-upstream origin app-config-w-java-autowire
+  881  git branch
+  882  git checkout rev-2-setr-and-constr-injection
+  883  git diff
+  884  git add .
+  885  git commit -m "Add Explicit Singleton scope to CustomerServiceImpl via @Scope annotation"
+  886  git checkout rev-2-setr-and-constr-injection
+  887  git diff
+  888  git add .
+  889  git commit -m "Correct missing constructor (as per last configuration)"
+  890  git add .
+  891  git commit -m "Add scope='singleton' attr to the XML Service bean and application logs to verify that the returned is the same instance."
+  892  git add .
+  893  git commit --amend
+  894  git status
+  895  git push
+  896  git checkout -b rev-2-aka-xml
+  897  git checkout rev-3-autowiring
+  898  git branch
+  899  git checkout spring-w-java-only-config
+  900  git checkout -b rev-4-aka-java
+  901  git checkout master
+  902  git branch
+  903  git checkout master
+  904  git branch -d rev-4-aka-java
+  905  git branch -a
+  906  git fetch
+  907  git branch -a
+  908  git checkout origin/app-config-w-java-autowire
+  909  git checkout -b rev-4-aka-java-config
+  910  git checkout rev-3-autowiring
+  911  git branch
+  912  git checkout master
+  913  git checkout rev-4-aka-java-config
+  914  git push --set-upstream origin rev-4-aka-java-config
+  915  git branch
+  916  git checkout spring-w-java-only-config
+  917  git checkout app-config-w-java-autowire
+  918  git status
+  919  git branch
+  920  git checkout master
+  921  git diff rev-4-aka-java-config
+  922  git checkout rev-4-aka-java-config
+  923  git checkout master
+  924  git push
+  925  git status
+  926  git status -a
+  927  git push origin --all
+  928  git checkout rev-4-aka-java-config
+  929  git grep "@Scope" $(git rev-list --all)
+  930  git checkout rev-1-poor-base-w-hard-dependencies
+  931  git checkout rev-2-aka-xml
+  932  git checkout rev-2-aka-xml -f
+  933  git checkout rev-3-autowiring
+  934  git checkout rev-4-aka-java-config
+  935  git log --oneline
+  936  git checkout rev-3-autowiring
+  937  git log --oneline
+  938  git checkout rev-2-aka-xml -f
+  939  git log --oneline
+  940  git checkout rev-1-poor-base-w-hard-dependencies
+  941  git log --oneline
+  942  git checkout master && git log --oneline
+  943  git checkout dev
+  944  git log --oneline
+  945  git checkout master
+  946  git log --oneline
+  947  git checkout spring-w-java-only-config
+  948  git checkout rev-4-aka-java-config
+  949  git status
+  950  git checkout spring-w-java-only-config -f
+  951  git checkout master
+  952  git checkout dev
+  953  git checkout rev-4-aka-java-config
+  954  git add .
+  955  git commit -m "Add @Scope to CustomerServiceImpl"
+  956  git status
+  957  git push
+  958  ping google.com
+  959  git status
+  960  git status --all
+  961  git push REMOTE --all
+  962  git push origin --all
+  963  git pull --all
+  964  git add .
+  965  git commit -m "Change CustomerServiceImpl @Scope to prototype instantiation"
+  966  git status
+  967  git push
+  968  git checkout rev-2-aka-xml
+  969  git add .
+  970  git commit -m "Create .../resources/app.properties file for holding config information
+  971  - Add unversioned 'Context' NS in applicationContext.xml"
+  972  git diff
+  973  git add .
+  974  git commit -m "Add dbUsername <property> to HibernateCustomerRepositoryImpl
+  975  - Add dbUsername & setDbUsername() to HibernateCustomerRepositoryImpl class"
+  976  git push
+  977  git push --set-upstream origin rev-2-aka-xml
+  978  git log --oneline
+  979  git add .
+  980  git dff
+  981  git diff
+  982  git status
+  983  git diff
+  984  git reset HEAD^
+  985  git diff
+  986  git add .
+  987  git commit -m "Replace XML initial values being set by tag with @Value('${prop name}') style declaration"
+  988  git branch
+  989  git checkout app-config-w-java-autowire
+  990  git status
+  991  git add .
+  992  git commit -m "Replace XML initial values being set by tag with @Value('${prop name}') style declaration"
+  993  git status
+  994  git commit -m "Replace XML initial values being set by tag with @Value('\${prop name}') style declaration"
+  995  git status
+  996  git checkout app-config-w-java-autowire
+  997  git status
+  998  git add .
+  999  git commit -m "Try to add @Value() defaults for class props given in app.properties.
+ 1000  - Application runs, but the values are not being read or set."
+ 1001  git commit --amend
+ 1002  git status
+ 1003  git log
+ 1004  git push
+ 1005  git branch
+ 1006  git checkout rev-4-aka-java-config
+ 1007  git add .
+ 1008  git commit -m "Add app.properties file with values and needed getter in AppConfig in order to provide default property values to classes via @Value()"
+ 1009  git status
+ 1010  git push
+ 1011  git status --all
+ 1012  git branch
+ 1013  git checkout spring-w-java-only-config
+ 1014  git checkout rev-2-setr-and-constr-injection
+ 1015  git checkout rev-2-aka-xml
+ 1016  git pull
+ 1017  git add .
+ 1018  git commit -m "Merge conflicts"
+ 1019  git push
+ 1020  git branch
+ 1021  git checkout rev-1-poor-base-w-hard-dependencies
+ 1022  git checkout master
+ 1023  git checkout dev
+ 1024  git checkout app-config-w-java-autowire
+ 1025  git push origin --all
+ 1026  ionic serve
+ 1027  git status
+ 1028  git diff dev
+ 1029  git add .
+ 1030  git commit
+ 1031  git status
+ 1032  git push
+ 1033  tos
+ 1034  cd ../../markets/
+ 1035  code
+ 1036  gedit .bashrc
+ 1037  . .bashrc
+ 1038  tos
+ 1039  ls
+ 1040  cd WebDev/
+ 1041  ls
+ 1042  cd Ionic/
+ 1043  ls
+ 1044  cd markets/
+ 1045  ls
+ 1046  ionic serve
+ 1047  netbeans
+ 1048  gedit ~/.bashrc
+ 1049  source ~/.bashrc
+ 1050  netbeans
+ 1051  cd WebDev/Ionic/
+ 1052  ls
+ 1053  cd markets/
+ 1054  git branch
+ 1055  git status
+ 1056  gedit .gitignore
+ 1057  git log --oneline
+ 1058  git log
+ 1059  ionic serve
+ 1060  tos
+ 1061  cd ~
+ 1062  tos
+ 1063  gedit .bashrc
+ 1064  . .bashrc
+ 1065  echo $PATH
+ 1066  netbeans
+ 1067  code
+ 1068  cd WebDev/Ionic/markets/ && ionic serve
+ 1069  cd ~/ && tos
+ 1070  tos
+ 1071  cd /home/todd/WebDev/ps/Ionic
+ 1072  git clone https://github.com/ToddJMullen/Ps-elite-schedule-app.git
+ 1073  cd Ps-elite-schedule-app/
+ 1074  git log --oneline
+ 1075  ionic --version
+ 1076  tos
+ 1077  top
+ 1078  tos
+ 1079  code
+ 1080  git status
+ 1081  git --oneline
+ 1082  git log --oneline
+ 1083  git add .
+ 1084  git reset HEAD
+ 1085  git status
+ 1086  git add .
+ 1087  git commit -m "Group commit, Working, but poor/old architecture.
+ 1088  - Can't use custom component with Ionic components inside another custom component
+ 1089  -Unknown/forgotten state, intent, origin of other pages. Abandoned for now/a fresh start."
+ 1090  git push
+ 1091  cd ../../ps/Ionic/ionic-e2e
+ 1092  code
+ 1093  npm uninstall promise-polyfill
+ 1094  npm uninstall promise-polyfill --save
+ 1095  npm install promise-polyfill@6.1.0  --save --save-exact
+ 1096  code
+ 1097  git log --oneline
+ 1098  git commit --amend
+ 1099  git status
+ 1100  git add .
+ 1101  git commit --amend
+ 1102  git status
+ 1103  git push
+ 1104  ionic cordova run android -l
+ 1105  ionic generate page about
+ 1106  ionic generate page location
+ 1107  ionic generate page locations
+ 1108  ionic generate page menu
+ 1109  ionic generate provider menu.service
+ 1110  ionic generate page menu.detail
+ 1111  ionic generate provider cart.service
+ 1112  ionic generate page checkout
+ 1113  git push
+ 1114  tos
+ 1115  top
+ 1116  cd WebDev/Ionic/markets/
+ 1117  ionic serve
+ 1118  cd ../../ps/Ionic/ && s
+ 1119  ls
+ 1120  cd ionic-e2e/
+ 1121  ionic serve
+ 1122  ionic cordova run android
+ 1123  ionic serve
+ 1124  htop
+ 1125  top
+ 1126  free -m
+ 1127  top
+ 1128  code
+ 1129  top
+ 1130  netbeans
+ 1131  gedit .bashrc
+ 1132  . .bashrc
+ 1133  netbeans
+ 1134  echo $PATH
+ 1135  gedit .bashrc
+ 1136  . .bashrc
+ 1137  netbeans
+ 1138  htop
+ 1139  top
+ 1140  free -m
+ 1141  code
+ 1142  ionic serve
+ 1143  ionic g pg Game --flat --styleext css --spec false --route-path game --dry-run
+ 1144  ionic g pg Game
+ 1145  git add .
+ 1146  git commit -m "Add base Game page"
+ 1147  ionic g e WordTypes
+ 1148  git add .
+ 1149  git commit -m "Add WordTypes enum"
+ 1150  cd WebDev/ps/Ionic/ionic-e2e
+ 1151  code
+ 1152  ionic cordova plugin add com.paypal.cordova.mobilesdk
+ 1153  npm install --save @ionic-native/paypal
+ 1154  cd ..
+ 1155  cd ionic-cli/
+ 1156  ifconfig
+ 1157  ionic cordova run android
+ 1158  ionic cordova run android --verbose
+ 1159  ionic cordova build android --prod --release
+ 1160  git commit --amend
+ 1161  git log --oneline
+ 1162  git push
+ 1163  cd ..
+ 1164  ls
+ 1165  nvm install lts/*
+ 1166  node --version
+ 1167  nvm alias default lts/*
+ 1168  node --version
+ 1169  nvm ls
+ 1170  nvm ls-remote
+ 1171  nvm ls
+ 1172  nvm install v8.11.1
+ 1173  code
+ 1174  vivaldi
+ 1175  vivaldi-stable
+ 1176  vivaldi-snapshot
+ 1177  npm -g install ionic
+ 1178  ionic --version
+ 1179  git config --global --list
+ 1180  ionic info
+ 1181  ionic help
+ 1182  ionic docs
+ 1183  ionic signup
+ 1184  which ionic
+ 1185  ls
+ 1186  mkdir ionic-cli
+ 1187  rm -R ionic-cli
+ 1188  ls
+ 1189  mkdir ionic-cli && cd $_
+ 1190  ionic start
+ 1191  ls
+ 1192  ionic help
+ 1193  ionic start help
+ 1194  ionic start ion-cli-first tutorial
+ 1195  ls
+ 1196  rm -R ion-cli-first/
+ 1197  ls
+ 1198  npm install ionic@4.0.0-rc.5
+ 1199  cd /home/todd/
+ 1200  ls -a node_modules/
+ 1201  ls -a
+ 1202  ll
+ 1203  cd WebDev/ps/Ionic/ionic-cli/
+ 1204  nvm install ionic@4.0.0-rc.5
+ 1205  ls -ls /home/todd/node_modules/
+ 1206  id -un
+ 1207  sudo chown -R todd /home/todd/node_modules/
+ 1208  ls -ls /home/todd/node_modules/
+ 1209  sudo chown -R todd:todd /home/todd/node_modules/
+ 1210  ls -ls /home/todd/node_modules/
+ 1211  npm install ionic@4.0.0-rc.5
+ 1212  ionic --versino
+ 1213  ionic --version
+ 1214  ionic start ion-cli-first
+ 1215  cd ion-cli-first/
+ 1216  npm i --save -E @ionic/pro
+ 1217  ionic signup
+ 1218  ionic login
+ 1219  ls -l
+ 1220  code .
+ 1221  ionic serve
+ 1222  cd ..
+ 1223  ls
+ 1224  rm -R ion-cli-first/
+ 1225  rm -Rf ion-cli-first/
+ 1226  ls
+ 1227  ionic start --help
+ 1228  ionic start --list
+ 1229  ionic start IonTutApp tutorial
+ 1230  ls
+ 1231  cd $_
+ 1232  cd IonTutApp/
+ 1233  ls
+ 1234  cd ..
+ 1235  rm -R IonTutApp/
+ 1236  ionic start IonBlank blank
+ 1237  ls
+ 1238  cd IonBlank/
+ 1239  ls
+ 1240  code
+ 1241  code .
+ 1242  cd ..
+ 1243  ionic start ps-tabs tabs --no-git --no-link --type angular
+ 1244  cd ps-tabs/
+ 1245  code .
+ 1246  ionic serve
+ 1247  cd ..
+ 1248  ionic start ps-sidemenu sidemenu --type angular --no-git --no-link --no-deps
+ 1249  cd ps-sidemenu/
+ 1250  ls
+ 1251  ionic serve
+ 1252  code .
+ 1253  npm install
+ 1254  cd ..
+ 1255  ls
+ 1256  cd IonBlank/
+ 1257  ionic serve
+ 1258  cd ../ps-sidemenu/
+ 1259  ionic serve --lab
+ 1260  ionic serve --devapp
+ 1261  ionic serve
+ 1262  ionic --help
+ 1263  ionic --help devapp
+ 1264  ionic --help --devapp
+ 1265  ionic serve --devapp
+ 1266  ionic serve --c
+ 1267  ionic serve -c
+ 1268  cd ../IonBlank/
+ 1269  ionic generate --help
+ 1270  ionic generate --list
+ 1271  git log
+ 1272  git status
+ 1273  git add .
+ 1274  git commit -m "Initial commit"
+ 1275  git checkout -b dev
+ 1276  ionic g i IWord
+ 1277  git add .
+ 1278  git commit -m "Add IWord interface"
+ 1279  ionic g s Word --spec false --flat false
+ 1280  git add .
+ 1281  git commit -m "Add Word service & implementation"
+ 1282  ionic g m components --skip-tests
+ 1283  ionic g m components --skipTests
+ 1284  ionic g m components --spec false
+ 1285  ionic g m components
+ 1286  ionic g c randomWord --inline-style --inline-template --spec false
+ 1287  ionic g c --help
+ 1288  npx ng g c --help
+ 1289  ionic g c randomWord --spec false
+ 1290  ionic g c randomWord --spec false --export
+ 1291  git add .
+ 1292  git commit -m "Add RandomWord component"
+ 1293  ionic serve
+ 1294  ionic serve -b
+ 1295  git add .
+ 1296  git commit -m "Add Game page & correct WordService import paths"
+ 1297  cd ..
+ 1298  git clone https://github.com/walkingriver/ps-libs-dashboard.git ps-libs
+ 1299  cd ps-libs/
+ 1300  npm install
+ 1301  ionic login
+ 1302  ionic link
+ 1303  git push ionic master -u
+ 1304  top
+ 1305  tos
+ 1306  gedit ~/.profile
+ 1307  . ~/.profile
+ 1308  gedit ~/.profile
+ 1309  java -version
+ 1310  gedit ~/.bashrc
+ 1311  . ~/.bashrc
+ 1312  java -version
+ 1313  tos
+ 1314  java -version
+ 1315  tos
+ 1316  sts
+ 1317  cd WebDev/ps/Java/Spring/
+ 1318  ls
+ 1319  cd FitnessTracker
+ 1320  git status
+ 1321  git checkout dev
+ 1322  git reset HEAD^ --hard
+ 1323  git staus
+ 1324  git status
+ 1325  git log
+ 1326  cd ../FitnessTrackerII
+ 1327  ls
+ 1328  git status
+ 1329  git init
+ 1330  echo "target\n*.class" > .gitignore
+ 1331  ls
+ 1332  gedit .gitignore
+ 1333  git status
+ 1334  git add .
+ 1335  git commit -m "Initial commit after changing to Spring 4.0.3, with HelloController & TurkeyController"
+ 1336  cd .
+ 1337  cd ..
+ 1338  ls
+ 1339  rm -rf FitnessTrackerIV/
+ 1340  ls
+ 1341  mkdir IntroSpring4 && cd $_
+ 1342  echo "A 'box' to collect the multiple examples projects described" >> README.md
+ 1343  ls
+ 1344  gedit README.md
+ 1345  git init
+ 1346  git add .
+ 1347  git commit -m "Initial Commit"
+ 1348  git checkout -b dev
+ 1349  top
+ 1350  who
+ 1351  whoami
+ 1352  where
+ 1353  what
+ 1354  why
+ 1355  how
+ 1356  when
+ 1357  whois 247.130.119.183
+ 1358  man whois
+ 1359  whois 247.130.119.183
+ 1360  pin 247.130.119.183
+ 1361  ping 247.130.119.183
+ 1362  cd ../../..
+ 1363  cd bash/LinuxCliFundamentals/
+ 1364  ls
+ 1365  cat people.csv
+ 1366  cat -vet people-win_crlf.csv
+ 1367  cat -3 people.csv
+ 1368  tail -3 people.csv
+ 1369  cut -f2,3,4 people.csv
+ 1370  cut -f2,3,4 -d"," people.csv
+ 1371  tail -3 /etc/passwd
+ 1372  cut -f1,5 -d":"
+ 1373  cut -f1,5 -d":" /etc/passwd
+ 1374  echo "This is file 1" > file1
+ 1375  echo "This is file 2\nThis is line 2?" > file2
+ 1376  cat file2
+ 1377  gedit file2
+ 1378  cat file2
+ 1379  echo "This is file 3\\nThis is line 3?\\nLine 3??" > file3
+ 1380  cat file3
+ 1381  echo -e "This is file 3\\nThis is line 3?\\nLine 3??" > file3
+ 1382  cat file3
+ 1383  printf "This is file 4\\nThis is line 2?\\nLine 3??" > file4
+ 1384  cat file4
+ 1385  echo -e "This is file 4\\nThis is line 2?\\nLine 3??" > file4
+ 1386  cat file4
+ 1387  printf "This is file 4\\nThis is line 2?\\nLine 3??" > file4
+ 1388  cat file4
+ 1389  printf "This is file 4\\nThis is line 2?\\nLine 3??\n" > file4
+ 1390  cat file4
+ 1391  cat people.csv
+ 1392  ls
+ 1393  mv people-win_crlf.csv win-people_crlf.csv
+ 1394  ls
+ 1395  sort people.csv
+ 1396  sort people.csv | less
+ 1397  cut -f2,3,5 -d"," | sort | less
+ 1398  cut -f2,3,5 -d"," | sort
+ 1399  sort people.csv | less
+ 1400  sort -r people.csv | less
+ 1401  sort -k4 -t"," people.csv
+ 1402  sort -k2 -t"," people.csv
+ 1403  sort -k3 -t"," people.csv
+ 1404  sort -t"," -k1 people.csv
+ 1405  cut -f4 -d"," people.csv | sort -u
+ 1406  cat people.csv
+ 1407  sort -k1 -n -t"," people.csv
+ 1408  sort -k6 -n -t"," people.csv
+ 1409  cut -f6 people.csv | sort
+ 1410  cut -f6 people.csv
+ 1411  cut -f6 -d"," people.csv
+ 1412  cut -f6 -d"," people.csv | sort
+ 1413  cut -f6 -d"," people.csv | sort -n
+ 1414  tail -3 -n
+ 1415  tail -3 people.csv
+ 1416  cut -f2,3,6 people.csv | sort
+ 1417  cut -f2,3,6 -d"," people.csv | sort
+ 1418  cut -f2,3,6 -d"," people.csv | sort -k3
+ 1419  cut -f2,3,6 -d"," people.csv | sort -k3 -n
+ 1420  tail -5 people.csv | cut -f2,3,6 -d"," | sort -k3 -n
+ 1421  tail -5 people.csv | cut -f2,3,6 -d"," | sort -k3 -n -t","
+ 1422  tail -5 people.csv | cut -f2,3,6 -d"," | sort -r -k3 -n -t","
+ 1423  tail -5 people.csv | cut -f2,3,6 -d"," | sort -r -k2 -t","
+ 1424  echo "First, Last, IP" && tail -5 people.csv | cut -f2,3,6 -d"," | sort -r -k2 -t","
+ 1425  pgrep firefox
+ 1426  pkill 27584
+ 1427  history
+ 1428  history ?apt
+ 1429  history
+ 1430  cat .profile
+ 1431  less .profile
+ 1432  less .bashrc
+ 1433  cd WebDev/ps/Java/Spring/IntroSpring4/
+ 1434  cd ..
+ 1435  ls
+ 1436  cd FitnessTrackerII/
+ 1437  git status
+ 1438  git checkout -b dev
+ 1439  git status
+ 1440  git add .
+ 1441  git commit -m "Add base MinutesController"
+ 1442  git status
+ 1443  git add .
+ 1444  git commit -m "Remove test TurkeyController"
+ 1445  git commit --amend
+ 1446  git log --oneline
+ 1447  git status
+ 1448  git diff
+ 1449  git add .
+ 1450  git commit -m "Add base 'addMinutes.jsp' & add taglib http://www.springframework.org/tags/form"
+ 1451  git diff
+ 1452  git add .
+ 1453  git commit -m "Add form:form & form:input bound to model property 'minutes'"
+ 1454  git status
+ 1455  git add .
+ 1456  git commit -m "Add com.imagi.model.Exercise
+ 1457  - Inject Exercise instance in MinutesController::addMinutes
+ 1458  - Add sys log to dump Exercise.minutes in console
+ 1459  addMinutes.jsp, Bind form:form to injected Exercise instance (request object model)"
+ 1460  git commit --amend
+ 1461  echo git config core.editor
+ 1462  core.editor
+ 1463  git config core.editor
+ 1464  grep editor ~/.gitconfig
+ 1465  ~/.gitconfigamen
+ 1466  git commit --amend
+ 1467  git add .
+ 1468  git commit --amend
+ 1469  $a
+ 1470  git status
+ 1471  statusadd
+ 1472  git add .
+ 1473  .amen
+ 1474  history
+ 1475  .amen
+ 1476  git commit --amend
+ 1477  statusadd
+ 1478  git status
+ 1479  git diff
+ 1480  git add .
+ 1481  git commit -m "MinutesController.java, Add alternate addMoreMinutes() for redirect example"
+ 1482  git add .
+ 1483  git commit -m "Add forwarding from addMinutes/ to addMoreMinutes/ via internal server redirect"
+ 1484  $?add
+ 1485  git add .
+ 1486  git commit -m "Add alternate redirect syntax to complete og request & move the user to a new target URI with a new request"
+ 1487  git add .
+ 1488  git  commit -m "Disable forwarding/redirecting example code"
+ 1489  git add .
+ 1490  git commit --amend
+ 1491  git add .
+ 1492  git commit -m "servlet-config.xml, Add <mvc:resources /> to include static resource called pdfs
+ 1493  - web.xml, Add mapping to /pdfs/**"
+ 1494  git status
+ 1495  git add .
+ 1496  git commit -m "Add messages.properties file"
+ 1497  ls
+ 1498  rm -rf node_modules/
+ 1499  ls
+ 1500  ls -l
+ 1501  ls -A
+ 1502  ls
+ 1503  ls -a
+ 1504  vim .nvm/
+ 1505  sudo apt-get update
+ 1506  sudo apt-get install firefox
+ 1507  man firefox
+ 1508  firefox -restart
+ 1509  command -v nvm
+ 1510  ls
+ 1511  cd WebDev/
+ 1512  ls
+ 1513  git clone https://github.com/ToddJMullen/SystemSetup.git
+ 1514  cd SystemSetup/
+ 1515  ls
+ 1516  vim README.md
+ 1517  git add .
+ 1518  dmesg
+ 1519  mount
+ 1520  blkusb
+ 1521  blkls
+ 1522  fdisk -l
+ 1523  sudo fdisk -l
+ 1524  lsusb
+ 1525  lsusb -l
+ 1526  history | less
+ 1527  history > ~/Calibre\ Library/Linux/LinuxHistory2.txt
+ 1528  history > ~/WebDev/SystemSetup/Mint2HistoryDump2.txt
+ 1529  alias > ~/WebDev/SystemSetup/Mint2AliasDump.txt
