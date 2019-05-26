@@ -128,5 +128,17 @@ and open the template in the editor.
 		<li></li>
 	    </ul>
 	</div>
+	<div>
+		<h2>Linux Fixes</h2>
+		<ul>
+			<li>apt-get exired key error(s) when trying to update
+				<code>$ sudo apt-key list
+					 | grep "expired: "
+					 | sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp'
+					 | xargs -n1 sudo apt-key adv --keyserver keys.gnupg.net --recv-keys </code>
+			</li>
+			<li></li>
+		</ul>
+	</div>
     </body>
 </html>
