@@ -3,6 +3,17 @@
 sudo apt-get install git
 git clone https://github.com/ToddJMullen/SystemSetup.git && cd SystemSetup/
 
+## Geogebra
+
+```bash
+sudo apt-add-repository 'deb http://www.geogebra.net/linux/ stable main'
+sudo apt install geogebra-classic
+```
+
+Software catalog: Font Manager
+
+sudo apt-get install font-manager #(this is just a guess)
+
 ## Graphics Tablet
 
 sudo dpkg --remove --force-remove-reinstreq digimend-dkms
