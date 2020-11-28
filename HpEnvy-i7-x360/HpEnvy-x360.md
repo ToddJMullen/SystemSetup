@@ -27,4 +27,27 @@ It stated that the drive must be at least 16Gb, initial drive is 16Gb.
 
 ## Shrink Volume
 
+To keep Windows alongside with Linux, but not waste hard disk space, the Win partition should be reduced.
+Typically, windows will only suggest that it can be shrunk ~50% even on new systems.  This is due to
+'unmovable' files that are in the 'middle' of the hard disk.  I believe they are put there strategically, but that's just
+my feeling about it.  As I remember, the files are related to Hibernation, but once moved to an appropriate location,
+then the Windows partition can be shrunk to the space actually being used.
+
+### Move unmoved files
+
+1. [x] Disable hibernate
+   1. Open Admin command prompt
+   2. `> powercfg /h off`
+2. [] Disable page file
+   1. Super (Windows) > "Advanced System Settings" > (Performance) Settings > Advanced (tab) > Virtual Memory (Change)
+    (uncheck) Automatically manage paging filesize > "No Paging File" > Set > (Yes to warning) > Ok > Ok 
+3. [] Disable system restore
+    "Advanced System Settings" > "System Protection" (tab) > "Configure" > "Disable System Protection" > (Yes to warning)
+4. [] Defrag
+5. [] 
+
+Refs: [Super User ](https://superuser.com/questions/1017764/how-can-i-shrink-a-windows-10-partition)
+[Other Article](https://www.download3k.com/articles/How-to-shrink-a-disk-volume-beyond-the-point-where-any-unmovable-files-are-located-00432)
+
+
 
