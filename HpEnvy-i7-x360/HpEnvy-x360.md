@@ -33,21 +33,25 @@ Typically, windows will only suggest that it can be shrunk ~50% even on new syst
 my feeling about it.  As I remember, the files are related to Hibernation, but once moved to an appropriate location,
 then the Windows partition can be shrunk to the space actually being used.
 
-### Move unmoved files
+### Remove unmovable files
 
 1. [x] Disable hibernate
    1. Open Admin command prompt
    2. `> powercfg /h off`
-2. [] Disable page file
+2. [x] Disable page file
    1. Super (Windows) > "Advanced System Settings" > (Performance) Settings > Advanced (tab) > Virtual Memory (Change)
     (uncheck) Automatically manage paging filesize > "No Paging File" > Set > (Yes to warning) > Ok > Ok 
-3. [] Disable system restore
+3. [x] Disable system restore
     "Advanced System Settings" > "System Protection" (tab) > "Configure" > "Disable System Protection" > (Yes to warning)
-4. [] Defrag
+4. [x] Restart (They should be gone)
 5. [] 
 
 Refs: [Super User ](https://superuser.com/questions/1017764/how-can-i-shrink-a-windows-10-partition)
 [Other Article](https://www.download3k.com/articles/How-to-shrink-a-disk-volume-beyond-the-point-where-any-unmovable-files-are-located-00432)
 
+### Shrink Volume
+
+1. [x] Super (Windows) + X > Disk Management > Right Click System Volume > Type number of Mb to shrink the volume
+    The right boundary of the volume will be shifted left that amount & leave that space unallocated on the right.
 
 
