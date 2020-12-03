@@ -54,4 +54,13 @@ Refs: [Super User ](https://superuser.com/questions/1017764/how-can-i-shrink-a-w
 1. [x] Super (Windows) + X > Disk Management > Right Click System Volume > Type number of Mb to shrink the volume
     The right boundary of the volume will be shifted left that amount & leave that space unallocated on the right.
 
+### Windows System Repair
 
+This may not be needed usually. I have done the same steps on my previous Acer without problems, but After shrinking the volume, there were frequent crashed of Firefox & Opera, "Out of memory" errors, & random screen freezing or blanking.
+Thinking that they might have config flags that pointed to disk locations that were no longer valid, I tried reinstalling both, but it did not fix the problem.  I found & tried the following commands run 
+with admin privileges:
+`sfc /scannow`
+followed by
+`Dism /Online /Cleanup-Image /RestoreHealth`
+
+Ref: [Microsoft Forum](https://answers.microsoft.com/en-us/windows/forum/windows_10-update/system-file-check-sfc-scan-and-repair-system-files/bc609315-da1f-4775-812c-695b60477a93)
