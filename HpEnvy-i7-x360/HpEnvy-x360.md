@@ -64,3 +64,7 @@ followed by
 `Dism /Online /Cleanup-Image /RestoreHealth`
 
 Ref: [Microsoft Forum](https://answers.microsoft.com/en-us/windows/forum/windows_10-update/system-file-check-sfc-scan-and-repair-system-files/bc609315-da1f-4775-812c-695b60477a93)
+
+This *seemed* to work for a while, but the system is still very crashy when trying to browser 'normally' (Opera + Firefox ~45 tabs together).
+
+Symptoms: Tabs keep crashing, browsers keep crashing, video display goes black and fails to correct. Generally when the video goes black, closing the lid until it goes to sleep & opening it back up is the only way I've been able to 'recover' the display (holding the power button ~45s did not even do *anything* -- including not shutting it off).  Even then, the display is corrupted as I am typing this the lock screen & desktop are scrambled together.
