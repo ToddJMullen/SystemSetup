@@ -68,3 +68,12 @@ Ref: [Microsoft Forum](https://answers.microsoft.com/en-us/windows/forum/windows
 This *seemed* to work for a while, but the system is still very crashy when trying to browser 'normally' (Opera + Firefox ~45 tabs together).
 
 Symptoms: Tabs keep crashing, browsers keep crashing, video display goes black and fails to correct. Generally when the video goes black, closing the lid until it goes to sleep & opening it back up is the only way I've been able to 'recover' the display (holding the power button ~45s did not even do *anything* -- including not shutting it off).  Even then, the display is corrupted as I am typing this the lock screen & desktop are scrambled together.
+
+
+### Addendum
+
+I had added more notes on trying to recover Windows, but did not push the changes.  While playing with the installing options for POP OS, 
+I kept getting warnings about the partition asking me if I wanted to repair it. I ignored it multiple times as I played with options, but at some point I thought perhaps that would repair the problem with the random crashes in Windows and I agreed to let it 'repair' the partition. 
+I have not been able to log back into Windows since.  I attempted to repair or recover Windows numberous ways,
+but WIndows kept complaining that it couldn't start.  I did/do not have the restore disk with me as I went traveling spontaneously some time back.
+I decided to complete the installation and continue as is. I will try to recover it again when I get back home.
