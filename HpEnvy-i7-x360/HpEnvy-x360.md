@@ -75,5 +75,41 @@ Symptoms: Tabs keep crashing, browsers keep crashing, video display goes black a
 I had added more notes on trying to recover Windows, but did not push the changes.  While playing with the installing options for POP OS, 
 I kept getting warnings about the partition asking me if I wanted to repair it. I ignored it multiple times as I played with options, but at some point I thought perhaps that would repair the problem with the random crashes in Windows and I agreed to let it 'repair' the partition. 
 I have not been able to log back into Windows since.  I attempted to repair or recover Windows numberous ways,
-but WIndows kept complaining that it couldn't start.  I did/do not have the restore disk with me as I went traveling spontaneously some time back.
+but Windows kept complaining that it couldn't start.  I did/do not have the restore disk with me as I went traveling spontaneously some time back.
 I decided to complete the installation and continue as is. I will try to recover it again when I get back home.
+
+
+# Pop OS - Post Install
+
+### Customizations
+
+#### Turn on minimize/maximize
+1 Install GNOME Tweaks from Pop Store  
+    Tweaks > Windows Titlebars > (enable Minimize & Maximize)
+
+
+
+
+### Applications
+
+**Pop Shop**
+- GNOME Tweaks
+- VS Code
+- Tiled 
+
+
+**External**
+- Opera [Opera](https://www.opera.com/download)
+- ThinkOrSwim [ThinkOrSwim]()
+
+
+
+
+
+### Fix Opera Video
+Refs: 
+- (Stack Exchange)[https://unix.stackexchange.com/questions/384015/h-264-support-for-opera-and-opensuse]
+- (Opera Forums)[https://forums.opera.com/topic/27463/bug-html5-h-264-codec-videos-no-longer-working-on-opera-54-0-2952-41-ubuntu-18-04-lts-x86_64-xfce/7]
+
+
+### ThinkOrSwim
