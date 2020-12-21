@@ -107,9 +107,28 @@ I decided to complete the installation and continue as is. I will try to recover
 
 
 ### Fix Opera Video
+
 Refs: 
-- (Stack Exchange)[https://unix.stackexchange.com/questions/384015/h-264-support-for-opera-and-opensuse]
 - (Opera Forums)[https://forums.opera.com/topic/27463/bug-html5-h-264-codec-videos-no-longer-working-on-opera-54-0-2952-41-ubuntu-18-04-lts-x86_64-xfce/7]
+- (SE H264 Support for Opera)[https://unix.stackexchange.com/questions/384015/h-264-support-for-opera-and-opensuse]
+- 
+
 
 
 ### ThinkOrSwim
+
+
+`bash
+> # Enable Universe to install Open JDK. Note: Universe includes all Community-Maintained, Open-Source Software
+> sudo add-apt-repository universe
+> sudo apt-get update
+> sudo apt install openjdk-8-jdk
+> cd ~/Downloads
+> sudo chmod +x thinkorswim_installer.sh
+> ./thinkorswim_installer.sh
+`
+Note: No JRE/JDK was present in Pop OS, so unlike my previous systems, there was no need to switch / manage other versions or create desktop
+    links to alter PATH before starting ToS.
+
+Refs:
+- (Running ToS on Mint 19)[https://unix.stackexchange.com/questions/545041/running-thinkorswim-on-linux-mint-19]

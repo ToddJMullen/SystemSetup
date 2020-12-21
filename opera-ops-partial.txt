@@ -1,0 +1,50 @@
+    1  nano /etc/security/pam_env.conf 
+    2  sudo nano /etc/security/pam_env.conf 
+    3  sudo apt-get install gnome-tweaks
+    4  env MOZ_USE_XINPUT2=1 firefox
+    5  dmesg
+    6  sudo dmesg
+    7  sudo dmesg > grep plan
+    8  dmesg --help
+    9  sudo dmesg | grep plan
+   10  cd Dev/SystemSetup/
+   11  git add .
+   12  git commit -m "Adding Post-Install details..."
+   13  git push
+   14  cd /usr/lib/x86_64-linux-gnu/opera/
+   15  which chromium 
+   16  cd /usr/bin/chromium
+   17  cd /usr/bin/
+   18  ls chr
+   19  ls chr*
+   20  ls chrome-gnome-shell 
+   21  cd chrome-gnome-shell && ls
+   22  chromium 
+   23  ls -al /usr/bin | grep chrom
+   24  ls /usr/share/code/
+   25  ls
+   26  cd ../lib
+   27  ls
+   28  cd x86_64-linux-gnu/
+   29  ls
+   30  cd opera/
+   31  ls
+   32  sudo cp /usr/share/code/libffmpeg.so libffmpeg.so
+   33  ls
+   34  sudo rm libffmpeg.so
+   35  sudo mv libffmpeg.so.cp.bak
+   36  sudo mv libffmpeg.so libffmpeg.so.mv.bak
+   37  ls
+   38  ls ff*
+   39  ls lib*
+   40  sudo mkdir -p /usr/lib/chromium-browser
+   41  sudo mv ~/Downloads/0.50.2-linux-ia32/libffmpeg.so /usr/lib/chromium-browser/
+   42  sudo chmod 555 /usr/lib/chromium-browser/libffmpeg.so 
+   43  ls -a /usr/lib/chromium-browser/libffmpeg.so 
+   44  ls -l /usr/lib/chromium-browser/libffmpeg.so 
+   45  man ldconfig 
+   46  sudo ldconfig
+   47  ls
+   48  sudo mv libffmpeg.so.bak libffmpeg.so
+   49  ls
+   50  history > ~/Dev/SystemSetup/opera-ops-partial.txt
