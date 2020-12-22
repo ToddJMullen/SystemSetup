@@ -96,6 +96,7 @@ I decided to complete the installation and continue as is. I will try to recover
 - GNOME Tweaks
 - VS Code
 - Tiled 
+- Wireshark
 
 
 **External**
@@ -103,7 +104,21 @@ I decided to complete the installation and continue as is. I will try to recover
 - ThinkOrSwim [ThinkOrSwim]()
 
 
+### Wireshark Permission Denied Error
 
+Trying to run after installation gives a "Couldn’t run /usr/bin/dumpcap in child process: Permission denied" error because I (the user) 
+does not have permission to record the network.  
+Temp fix:
+`bash
+> sudo wireskark
+`
+
+Permanent fix:
+`bash
+> sudo usermod -a -G wireshark $USER
+`
+Ref:
+(Tech Overflow)[https://techoverflow.net/2019/06/10/how-to-fix-wireshark-couldnt-run-usr-bin-dumpcap-in-child-process-permission-denied-on-linux/]
 
 
 ### Fix Opera Video
