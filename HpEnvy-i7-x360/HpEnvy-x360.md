@@ -97,6 +97,8 @@ I decided to complete the installation and continue as is. I will try to recover
 - VS Code
 - Tiled 
 - Wireshark
+- Umbrello
+- Manuskript
 
 
 **External**
@@ -121,7 +123,12 @@ Ref:
 (Tech Overflow)[https://techoverflow.net/2019/06/10/how-to-fix-wireshark-couldnt-run-usr-bin-dumpcap-in-child-process-permission-denied-on-linux/]
 
 
+Noted that WIreshark does not show the min, max, close buttons. This 'fix' *may* be related to 
+the missing buttons here or in VS Code.
+
+
 ### Fix Opera Video
+(Note: not working yet)
 
 Refs: 
 - (Opera Forums)[https://forums.opera.com/topic/27463/bug-html5-h-264-codec-videos-no-longer-working-on-opera-54-0-2952-41-ubuntu-18-04-lts-x86_64-xfce/7]
@@ -132,9 +139,8 @@ Refs:
 
 ### ThinkOrSwim
 
-
 `bash
-> # Enable Universe to install Open JDK. Note: Universe includes all Community-Maintained, Open-Source Software
+> \# Enable Universe to install Open JDK. Note: Universe includes all Community-Maintained, Open-Source Software
 > sudo add-apt-repository universe
 > sudo apt-get update
 > sudo apt install openjdk-8-jdk
@@ -142,8 +148,90 @@ Refs:
 > sudo chmod +x thinkorswim_installer.sh
 > ./thinkorswim_installer.sh
 `
-Note: No JRE/JDK was present in Pop OS, so unlike my previous systems, there was no need to switch / manage other versions or create desktop
-    links to alter PATH before starting ToS.
+Notes:  
+No JRE/JDK was present in Pop OS, so unlike my previous systems, there was no need to switch / manage other versions or create desktop
+links to alter PATH before starting ToS.
+However, on the following day I installed some other applications and at some point Java 11 got installed by something else. 
+Or, possibly more likely as a security upgrade. So I will need to tell the OS to use Java 8 just before launching.
+
+`bash
+> java -version
+> update-alternatives --list java
+> sudo update-alternatives --config java
+\# select desired version 
+> java -version \# to confirm
+`
+
+**Setup Alias Shortcut to open ThinkOrSwim**  
+`bash
+> \# .bashrc already includes a check for .bash_aliases, so I'll add it for parsing when .bashrc is read.
+> echo "alias tos="~/thinkorswim/thinkorswim" > ~/.bash_aliases
+> . ~/.bashrc \# Reload .bashrc
+> tos \# Test it out
+`
+
 
 Refs:
 - (Running ToS on Mint 19)[https://unix.stackexchange.com/questions/545041/running-thinkorswim-on-linux-mint-19]
+
+
+
+## Aside: Problems Noted
+
+### Noted Before ~12/20/20  
+VS Code no longer shows the min, max, close buttons on the window (only 90% sure it did originally). I have to use the Super key / overview to close the application.  I will try to uninstall / reinstall 
+to see if that fixes it.  
+
+### Noted Before ~12/24/20  
+Pop Shop will no longer open. From the menu it simply shows that it is working, then stop after some time.
+Using the CLI to try & launch also fails, but returns `Failed to register: Timeout was reached`
+
+
+
+### Make CLI remember last tabs & auto re-open on restart
+
+
+
+
+
+#### Aside ToS IV Rank Script
+
+`
+declare lower;
+declare hide_on_intraday; 
+input days_back = 252;
+def df = if (GetSymbol() == "/ES") then close("VIX") / 100
+else if (GetSymbol() == "/CL") then close("OIV") / 100
+else if (GetSymbol() == "/GC") then close("GVX") / 100
+else if (GetSymbol() == "/SI") then close("VXSLV") / 100
+else if (GetSymbol() == "/NQ") then close("VXN") / 100
+else if (GetSymbol() == "/TF") then close("RVX") / 100
+else if (GetSymbol() == "/YM") then close("VXD") / 100
+else if (GetSymbol() == "/6E") then close("EVZ") / 100
+else if (GetSymbol() == "/ZN") then close("VXTYN") / 100
+else imp_volatility();
+def df1 = if !IsNaN(df) then df else df[-1];
+def low_over_timespan = Lowest(df1, days_back);
+def high_over_timespan = Highest(df1, days_back);
+def iv_rank = Round( (df1 -low_over_timespan) / (high_over_timespan -low_over_timespan) * 100.0, 0);
+plot IVRank = iv_rank;
+IVRank.SetDefaultColor(Color.GREEN);
+AddLabel(yes, "IV Rank: " + iv_rank + " (IV in comparison to its yearly high and low IV)", Color.GREEN);
+def counts_below = fold i = 1 to days_back + 1 with count = 0
+do if df1[0] > df1[i] then count + 1 else count;
+def iv_percentile = Round(counts_below / days_back * 100.0, 0);
+plot IVPercentile = iv_percentile;
+IVPercentile.SetDefaultColor(Color.YELLOW);
+AddLabel(yes, "IV Percentile: " + iv_percentile + 
+" (" + iv_percentile + "% of days or "
+ + counts_below + " days out of " + days_back + " days were below the current IV)", Color.YELLOW);
+`
+
+
+
+
+
+
+
+
+
