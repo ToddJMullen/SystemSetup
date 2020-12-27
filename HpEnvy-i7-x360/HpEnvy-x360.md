@@ -179,12 +179,17 @@ Refs:
 ## Aside: Problems Noted
 
 ### Noted Before ~12/20/20  
-VS Code no longer shows the min, max, close buttons on the window (only 90% sure it did originally). I have to use the Super key / overview to close the application.  I will try to uninstall / reinstall 
-to see if that fixes it.  
+VS Code no longer opens to the full screen, nor shows the min, max, close buttons on the window (only 90% sure it did originally). 
+I have to use the Super key / overview to close the application.  I will try to uninstall / reinstall to see if that fixes it.  
+Restart on 12/27/20 did *not* fix it, so I will try to reinstall it now.  
+After reinstalling, the application seems to open fullscreen now although the problem may resurface again with use.
+There are still no min, max, close buttons though.
 
 ### Noted Before ~12/24/20  
 Pop Shop will no longer open. From the menu it simply shows that it is working, then stop after some time.
 Using the CLI to try & launch also fails, but returns `Failed to register: Timeout was reached`
+Restarted on 12/27/20 and have been able to to open & repoen it multiple times. (I had read previously where other people could
+not open it after the first time.) 
 
 
 
