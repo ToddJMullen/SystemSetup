@@ -99,11 +99,74 @@ I decided to complete the installation and continue as is. I will try to recover
 - Wireshark
 - Umbrello
 - Manuskript
-
+- Telegram Desktop
+- Krita
+- Inkscape
+- Gimp
+- Meld
 
 **External**
 - Opera [Opera](https://www.opera.com/download)
 - ThinkOrSwim [ThinkOrSwim]()
+- Unreal Engine
+    1 [Create an Epic Account](https://www.unrealengine.com)
+    1 Confirm Email
+    1 [Add Github Connection](https://www.unrealengine.com/account/connections)
+    1 Accept Invitation from [Epic Game on Github](https://github.com/EpicGames)
+    1 cd to where we want the source code & clone it (will require authentication to execute)
+    `git clone https://github.com/EpicGames/UnrealEngine.git`
+    1 Once cloning is complete README.md says to run
+    `./Setup.sh`
+    1 When that is complete:  `./GenerateProjectFiles.sh`
+    1 If Setup completes with a "Success" message, then the needed requirements have been downloaded & other build requirements have been created.
+    To compile Unreal Engine:  
+    `make -f Makefile`
+    Note: Instructions recommend a 'powerful' system to build with an estimated build time of 10m to 1h.
+    I am not sure if their estimate was for a first build or a rebuild, but this system has 8Gb & 10th Gen i7 & took ~2.5h to build. 
+    Compilation instructions can be found in Engine/Build/BatchFiles/Linux/README.md & the [UnrealEngine Forum](https://www.ue4community.wiki/Legacy/Building_On_Linux)  
+    1 Run:  
+    `bash
+    > cd Engine/Binaries/Linux/
+    > ./UE4Engine
+    `
+
+When trying to run it shows many 'building shaders' and finally crashes with:  
+`Engine crash handling finished; re-raising signal 11 for the default handler. Good bye.`
+Much further up I also noted these lines:  
+`bash
+[2021.01.02-01.24.04:741][  2]LogShaderCompilers: Display: Worker (3/5): shaders left to compile 3953
+INTEL-MESA: error: ../src/intel/vulkan/anv_device.c:3263: GPU hung on one of our command buffers (VK_ERROR_DEVICE_LOST)
+[2021.01.02-01.24.05:514][  2]LogVulkanRHI: Error: VulkanRHI::vkQueueSubmit(Queue, 1, &SubmitInfo, Fence->GetHandle()) failed, VkResult=-4
+ at /home/logos/Dev/UnrealEngine/Engine/Source/Runtime/VulkanRHI/Private/VulkanQueue.cpp:71 
+ with error VK_ERROR_DEVICE_LOST
+Fatal error: [File:/home/logos/Dev/UnrealEngine/Engine/Source/Runtime/VulkanRHI/Private/VulkanUtil.cpp] [Line: 803] 
+VulkanRHI::vkQueueSubmit(Queue, 1, &SubmitInfo, Fence->GetHandle()) failed, VkResult=-4
+ at /home/logos/Dev/UnrealEngine/Engine/Source/Runtime/VulkanRHI/Private/VulkanQueue.cpp:71 
+ with error VK_ERROR_DEVICE_LOST
+Signal 11 caught.
+Malloc Size=65538 LargeMemoryPoolOffset=65554 
+CommonUnixCrashHandler: Signal=11
+[2021.01.02-01.24.05:617][  2]LogCore: === Critical error: ===
+Unhandled Exception: SIGSEGV: invalid attempt to write memory at address 0x0000000000000003
+
+[2021.01.02-01.24.05:617][  2]LogCore: Fatal error: [File:/home/logos/Dev/UnrealEngine/Engine/Source/Runtime/VulkanRHI/Private/VulkanUtil.cpp] [Line: 803] 
+VulkanRHI::vkQueueSubmit(Queue, 1, &SubmitInfo, Fence->GetHandle()) failed, VkResult=-4
+ at /home/logos/Dev/UnrealEngine/Engine/Source/Runtime/VulkanRHI/Private/VulkanQueue.cpp:71 
+ with error VK_ERROR_DEVICE_LOST
+
+`
+A recommended fix I found for a similar looking error requires a dist upgrad, so I am adding this note & pushing these changes before continuing.  
+`apt-add-repository ppa:oibaf/graphics-drivers && apt-get update && apt-get dist-upgrade`
+
+
+
+
+
+    Ref: [Linux Quick Start](https://docs.unrealengine.com/en-US/SharingAndReleasing/Linux/BeginnerLinuxDeveloper/SettingUpAnUnrealWorkflow/index.html)
+
+- Komodo IDE
+ [Komodo IDE](https://www.activestate.com/products/komodo-ide/downloads/edit/)
+ I haven't used this before, but it was mentioned in a course, so I thought I'd see if they supported Linux & try it out.
 
 
 ### Wireshark Permission Denied Error
