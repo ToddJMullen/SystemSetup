@@ -1,0 +1,600 @@
+logos@pop-os:~$ sudo apt-add-repository ppa:oibaf/graphics-drivers && apt-get update && apt-get dist-upgrade
+[sudo] password for logos: 
+Note: PPA publishes dbgsym
+  You need to add 'main/debug' component to install the ddebs,
+  but apt update will print warning if the PPA has no ddebs
+Repository: 'deb http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu/ groovy main'
+Description:
+PLEASE READ: don't email me to report bugs, unless you are sure it's a packaging bug. Not only is email not a good tool for tracking bugs, it also excludes anybody else from tracking or working on the issue. Please read the section "Debugging and reporting problems" below.
+
+Also, please don't ask me to include non-free drivers, I won't do it.
+
+Patches and suggestions are welcomed.
+
+=============
+
+All Ubuntu architectures are supported.
+
+Supported Ubuntu versions:
+- 20.04 (focal) <- supported
+- 20.10 (groovy) <- supported
+- 21.04 (hirsute) <- supported
+
+For forum support see: http://goo.gl/qoUpWK
+
+=== Introduction ===
+This PPA provides updated free graphics drivers packages for radeon, intel and nvidia hardware. Updates packages provide:
+ * all driver packages are automagically built twice a day, when there are upstream changes
+ * Vulkan 1.2+ on recent intel and radeon GPU
+ * OpenGL 4.6+ support and new OpenGL extensions: http://mesamatrix.net
+ * gallium-nine support. Read the specific section below
+ * VDPAU and VAAPI Gallium3D accelerated video drivers (see below)
+ * packages built against latest stable LLVM
+ * Intel iris driver enabled by default
+ * mesa packages built with gcc LTO for smaller binary size (~10-15%) and improved performance
+
+As an added bonus I may include some updated open source games (backported from Debian or newer Ubuntu).
+
+=== Basic usage ===
+See "Adding this PPA to your system" later on, or just do:
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+and update your Ubuntu with the package here.
+
+=== Using gallium-nine ===
+Gallium-nine lets you run DirectX 9 games in a faster way, avoiding the inefficient translation of D3D9 calls to OpenGL. For more info see https://wiki.ixit.cz/d3d9
+You need:
+ * enable this PPA (see previous paragraph)
+ * then follow the instructions to install wine from this PPA: https://launchpad.net/~commendsarnex/+archive/ubuntu/winedri3
+
+=== Using alternative drivers - Here be dragons ===
+* zink - OpenGL emulated on a Vulkan driver:
+  Set MESA_LOADER_DRIVER_OVERRIDE=zink
+* Old Intel i965 OpenGL driver (iris is the default):
+  Set MESA_LOADER_DRIVER_OVERRIDE=i965
+* llvmpipe OpenGL software render:
+  Set MESA_LOADER_DRIVER_OVERRIDE=llvmpipe
+* Other options here: https://www.mesa3d.org/envvars.html
+
+=== Using accelerated video ===
+Supported VDPAU drivers: r300, r600, radeonsi, nouveau
+Supported VAAPI drivers: r600, radeonsi
+
+* First you need to install mesa-vdpau-drivers package:
+sudo apt-get install mesa-vdpau-drivers
+
+* Then to test the VDPAU driver with mpv use:
+$ mpv --hwdec=vdpau yourvideofile
+
+=== Upgrading to a newer Ubuntu ===
+It is *strongly* suggested to remove all packages from this PPA before updating to a newer Ubuntu release. See the section "Revert to original drivers" later on.
+Then, after the upgrade, you can add again this PPA.
+
+=== Debugging and reporting problems ===
+If you have some problem with the drivers try running the application from the command line and see if there are graphics related warnings. Also type dmesg to see if there are other related information here.
+
+If you get crashes install the relevant -dbg pacakges (libgl1-mesa-dri-dbg or libgl1-mesa-dri-experimental-dbg for 3D drivers and xserver-xorg-video-intel-dbg , xserver-xorg-video-nouveau-dbg or xserver-xorg-video-radeon-dbg for X drivers) and reproduce the crash with gdb. Example:
+$ gdb glxgears
+[...make your application crash and then get a backtrace with:]
+(gdb) bt
+
+If X.org crashes look at /var/log/Xorg.0.log (or /var/log/Xorg.0.log.old when a new X session is started after the crash).
+
+With the gathered information try searching at https://bugs.freedesktop.org/query.cgi (also try with google) if someone already reported a similar bug. If not you may want to report a new bug:
+for 3D drivers bugs: https://www.mesa3d.org/bugs.html
+for X / 2D driver bugs: https://bugs.freedesktop.org/enter_bug.cgi?product=xorg
+
+=== Revert to original drivers ===
+To revert to standard Ubuntu drivers type the following in a prompt shell:
+$ sudo apt-get install ppa-purge
+$ sudo ppa-purge ppa:oibaf/graphics-drivers
+
+=== Donations ===
+Some people asked me if I can accept donations to support this work. I don't, but if you have some spare money I would be happy if you could do a donation to a charity of your choice (for the poors, animals, whatever else you may think it might need it). Then feel free to send me a note about it!
+More info: https://launchpad.net/~oibaf/+archive/ubuntu/graphics-drivers
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Found existing deb entry in /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding deb entry to /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Found existing deb-src entry in /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding key to /etc/apt/trusted.gpg.d/oibaf-ubuntu-graphics-drivers.gpg with fingerprint 5ABCE68FF4633EA42E219156957D2708A03A4626
+Hit:1 http://us.archive.ubuntu.com/ubuntu groovy InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu groovy-security InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu groovy-updates InRelease             
+Hit:4 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy InRelease  
+Hit:5 http://us.archive.ubuntu.com/ubuntu groovy-backports InRelease           
+Hit:6 http://packages.microsoft.com/repos/vscode stable InRelease              
+Hit:7 https://deb.opera.com/opera-stable stable InRelease                      
+Hit:8 http://ppa.launchpad.net/system76/pop/ubuntu groovy InRelease
+Hit:9 http://apt.pop-os.org/proprietary groovy InRelease
+Reading package lists... Done
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+logos@pop-os:~$ sudo apt-add-repository ppa:oibaf/graphics-drivers && apt-get update
+Note: PPA publishes dbgsym
+  You need to add 'main/debug' component to install the ddebs,
+  but apt update will print warning if the PPA has no ddebs
+Repository: 'deb http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu/ groovy main'
+Description:
+PLEASE READ: don't email me to report bugs, unless you are sure it's a packaging bug. Not only is email not a good tool for tracking bugs, it also excludes anybody else from tracking or working on the issue. Please read the section "Debugging and reporting problems" below.
+
+Also, please don't ask me to include non-free drivers, I won't do it.
+
+Patches and suggestions are welcomed.
+
+=============
+
+All Ubuntu architectures are supported.
+
+Supported Ubuntu versions:
+- 20.04 (focal) <- supported
+- 20.10 (groovy) <- supported
+- 21.04 (hirsute) <- supported
+
+For forum support see: http://goo.gl/qoUpWK
+
+=== Introduction ===
+This PPA provides updated free graphics drivers packages for radeon, intel and nvidia hardware. Updates packages provide:
+ * all driver packages are automagically built twice a day, when there are upstream changes
+ * Vulkan 1.2+ on recent intel and radeon GPU
+ * OpenGL 4.6+ support and new OpenGL extensions: http://mesamatrix.net
+ * gallium-nine support. Read the specific section below
+ * VDPAU and VAAPI Gallium3D accelerated video drivers (see below)
+ * packages built against latest stable LLVM
+ * Intel iris driver enabled by default
+ * mesa packages built with gcc LTO for smaller binary size (~10-15%) and improved performance
+
+As an added bonus I may include some updated open source games (backported from Debian or newer Ubuntu).
+
+=== Basic usage ===
+See "Adding this PPA to your system" later on, or just do:
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+and update your Ubuntu with the package here.
+
+=== Using gallium-nine ===
+Gallium-nine lets you run DirectX 9 games in a faster way, avoiding the inefficient translation of D3D9 calls to OpenGL. For more info see https://wiki.ixit.cz/d3d9
+You need:
+ * enable this PPA (see previous paragraph)
+ * then follow the instructions to install wine from this PPA: https://launchpad.net/~commendsarnex/+archive/ubuntu/winedri3
+
+=== Using alternative drivers - Here be dragons ===
+* zink - OpenGL emulated on a Vulkan driver:
+  Set MESA_LOADER_DRIVER_OVERRIDE=zink
+* Old Intel i965 OpenGL driver (iris is the default):
+  Set MESA_LOADER_DRIVER_OVERRIDE=i965
+* llvmpipe OpenGL software render:
+  Set MESA_LOADER_DRIVER_OVERRIDE=llvmpipe
+* Other options here: https://www.mesa3d.org/envvars.html
+
+=== Using accelerated video ===
+Supported VDPAU drivers: r300, r600, radeonsi, nouveau
+Supported VAAPI drivers: r600, radeonsi
+
+* First you need to install mesa-vdpau-drivers package:
+sudo apt-get install mesa-vdpau-drivers
+
+* Then to test the VDPAU driver with mpv use:
+$ mpv --hwdec=vdpau yourvideofile
+
+=== Upgrading to a newer Ubuntu ===
+It is *strongly* suggested to remove all packages from this PPA before updating to a newer Ubuntu release. See the section "Revert to original drivers" later on.
+Then, after the upgrade, you can add again this PPA.
+
+=== Debugging and reporting problems ===
+If you have some problem with the drivers try running the application from the command line and see if there are graphics related warnings. Also type dmesg to see if there are other related information here.
+
+If you get crashes install the relevant -dbg pacakges (libgl1-mesa-dri-dbg or libgl1-mesa-dri-experimental-dbg for 3D drivers and xserver-xorg-video-intel-dbg , xserver-xorg-video-nouveau-dbg or xserver-xorg-video-radeon-dbg for X drivers) and reproduce the crash with gdb. Example:
+$ gdb glxgears
+[...make your application crash and then get a backtrace with:]
+(gdb) bt
+
+If X.org crashes look at /var/log/Xorg.0.log (or /var/log/Xorg.0.log.old when a new X session is started after the crash).
+
+With the gathered information try searching at https://bugs.freedesktop.org/query.cgi (also try with google) if someone already reported a similar bug. If not you may want to report a new bug:
+for 3D drivers bugs: https://www.mesa3d.org/bugs.html
+for X / 2D driver bugs: https://bugs.freedesktop.org/enter_bug.cgi?product=xorg
+
+=== Revert to original drivers ===
+To revert to standard Ubuntu drivers type the following in a prompt shell:
+$ sudo apt-get install ppa-purge
+$ sudo ppa-purge ppa:oibaf/graphics-drivers
+
+=== Donations ===
+Some people asked me if I can accept donations to support this work. I don't, but if you have some spare money I would be happy if you could do a donation to a charity of your choice (for the poors, animals, whatever else you may think it might need it). Then feel free to send me a note about it!
+More info: https://launchpad.net/~oibaf/+archive/ubuntu/graphics-drivers
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Found existing deb entry in /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding deb entry to /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Found existing deb-src entry in /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding key to /etc/apt/trusted.gpg.d/oibaf-ubuntu-graphics-drivers.gpg with fingerprint 5ABCE68FF4633EA42E219156957D2708A03A4626
+Hit:1 http://us.archive.ubuntu.com/ubuntu groovy InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu groovy-security InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu groovy-updates InRelease                   
+Hit:4 http://apt.pop-os.org/proprietary groovy InRelease                             
+Hit:5 http://us.archive.ubuntu.com/ubuntu groovy-backports InRelease                         
+Hit:6 http://packages.microsoft.com/repos/vscode stable InRelease                            
+Hit:7 https://deb.opera.com/opera-stable stable InRelease
+Hit:8 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy InRelease
+Hit:9 http://ppa.launchpad.net/system76/pop/ubuntu groovy InRelease
+Reading package lists... Done                                
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+logos@pop-os:~$ sudo apt-add-repository ppa:oibaf/graphics-drivers
+Note: PPA publishes dbgsym
+  You need to add 'main/debug' component to install the ddebs,
+  but apt update will print warning if the PPA has no ddebs
+Repository: 'deb http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu/ groovy main'
+Description:
+PLEASE READ: don't email me to report bugs, unless you are sure it's a packaging bug. Not only is email not a good tool for tracking bugs, it also excludes anybody else from tracking or working on the issue. Please read the section "Debugging and reporting problems" below.
+
+Also, please don't ask me to include non-free drivers, I won't do it.
+
+Patches and suggestions are welcomed.
+
+=============
+
+All Ubuntu architectures are supported.
+
+Supported Ubuntu versions:
+- 20.04 (focal) <- supported
+- 20.10 (groovy) <- supported
+- 21.04 (hirsute) <- supported
+
+For forum support see: http://goo.gl/qoUpWK
+
+=== Introduction ===
+This PPA provides updated free graphics drivers packages for radeon, intel and nvidia hardware. Updates packages provide:
+ * all driver packages are automagically built twice a day, when there are upstream changes
+ * Vulkan 1.2+ on recent intel and radeon GPU
+ * OpenGL 4.6+ support and new OpenGL extensions: http://mesamatrix.net
+ * gallium-nine support. Read the specific section below
+ * VDPAU and VAAPI Gallium3D accelerated video drivers (see below)
+ * packages built against latest stable LLVM
+ * Intel iris driver enabled by default
+ * mesa packages built with gcc LTO for smaller binary size (~10-15%) and improved performance
+
+As an added bonus I may include some updated open source games (backported from Debian or newer Ubuntu).
+
+=== Basic usage ===
+See "Adding this PPA to your system" later on, or just do:
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+and update your Ubuntu with the package here.
+
+=== Using gallium-nine ===
+Gallium-nine lets you run DirectX 9 games in a faster way, avoiding the inefficient translation of D3D9 calls to OpenGL. For more info see https://wiki.ixit.cz/d3d9
+You need:
+ * enable this PPA (see previous paragraph)
+ * then follow the instructions to install wine from this PPA: https://launchpad.net/~commendsarnex/+archive/ubuntu/winedri3
+
+=== Using alternative drivers - Here be dragons ===
+* zink - OpenGL emulated on a Vulkan driver:
+  Set MESA_LOADER_DRIVER_OVERRIDE=zink
+* Old Intel i965 OpenGL driver (iris is the default):
+  Set MESA_LOADER_DRIVER_OVERRIDE=i965
+* llvmpipe OpenGL software render:
+  Set MESA_LOADER_DRIVER_OVERRIDE=llvmpipe
+* Other options here: https://www.mesa3d.org/envvars.html
+
+=== Using accelerated video ===
+Supported VDPAU drivers: r300, r600, radeonsi, nouveau
+Supported VAAPI drivers: r600, radeonsi
+
+* First you need to install mesa-vdpau-drivers package:
+sudo apt-get install mesa-vdpau-drivers
+
+* Then to test the VDPAU driver with mpv use:
+$ mpv --hwdec=vdpau yourvideofile
+
+=== Upgrading to a newer Ubuntu ===
+It is *strongly* suggested to remove all packages from this PPA before updating to a newer Ubuntu release. See the section "Revert to original drivers" later on.
+Then, after the upgrade, you can add again this PPA.
+
+=== Debugging and reporting problems ===
+If you have some problem with the drivers try running the application from the command line and see if there are graphics related warnings. Also type dmesg to see if there are other related information here.
+
+If you get crashes install the relevant -dbg pacakges (libgl1-mesa-dri-dbg or libgl1-mesa-dri-experimental-dbg for 3D drivers and xserver-xorg-video-intel-dbg , xserver-xorg-video-nouveau-dbg or xserver-xorg-video-radeon-dbg for X drivers) and reproduce the crash with gdb. Example:
+$ gdb glxgears
+[...make your application crash and then get a backtrace with:]
+(gdb) bt
+
+If X.org crashes look at /var/log/Xorg.0.log (or /var/log/Xorg.0.log.old when a new X session is started after the crash).
+
+With the gathered information try searching at https://bugs.freedesktop.org/query.cgi (also try with google) if someone already reported a similar bug. If not you may want to report a new bug:
+for 3D drivers bugs: https://www.mesa3d.org/bugs.html
+for X / 2D driver bugs: https://bugs.freedesktop.org/enter_bug.cgi?product=xorg
+
+=== Revert to original drivers ===
+To revert to standard Ubuntu drivers type the following in a prompt shell:
+$ sudo apt-get install ppa-purge
+$ sudo ppa-purge ppa:oibaf/graphics-drivers
+
+=== Donations ===
+Some people asked me if I can accept donations to support this work. I don't, but if you have some spare money I would be happy if you could do a donation to a charity of your choice (for the poors, animals, whatever else you may think it might need it). Then feel free to send me a note about it!
+More info: https://launchpad.net/~oibaf/+archive/ubuntu/graphics-drivers
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Found existing deb entry in /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding deb entry to /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Found existing deb-src entry in /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/oibaf-ubuntu-graphics-drivers-groovy.list
+Adding key to /etc/apt/trusted.gpg.d/oibaf-ubuntu-graphics-drivers.gpg with fingerprint 5ABCE68FF4633EA42E219156957D2708A03A4626
+Hit:1 http://us.archive.ubuntu.com/ubuntu groovy InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu groovy-security InRelease                                      
+Hit:3 http://us.archive.ubuntu.com/ubuntu groovy-updates InRelease                                                                                      
+Hit:4 http://apt.pop-os.org/proprietary groovy InRelease                                                                                               
+Hit:5 http://us.archive.ubuntu.com/ubuntu groovy-backports InRelease                                                                              
+Hit:6 http://packages.microsoft.com/repos/vscode stable InRelease                                                 
+Hit:7 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy InRelease               
+Hit:8 https://deb.opera.com/opera-stable stable InRelease
+Hit:9 http://ppa.launchpad.net/system76/pop/ubuntu groovy InRelease
+Reading package lists... Done
+logos@pop-os:~$ sudo apt-get update
+Hit:1 http://us.archive.ubuntu.com/ubuntu groovy InRelease
+Hit:2 http://apt.pop-os.org/proprietary groovy InRelease                                                                         
+Hit:3 http://us.archive.ubuntu.com/ubuntu groovy-security InRelease                                                                               
+Hit:4 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy InRelease                                                                     
+Hit:5 http://packages.microsoft.com/repos/vscode stable InRelease                                                                                      
+Hit:6 http://us.archive.ubuntu.com/ubuntu groovy-updates InRelease                                                                                     
+Hit:7 https://deb.opera.com/opera-stable stable InRelease                                                
+Hit:8 http://us.archive.ubuntu.com/ubuntu groovy-backports InRelease               
+Hit:9 http://ppa.launchpad.net/system76/pop/ubuntu groovy InRelease                
+Reading package lists... Done
+logos@pop-os:~$ sudo apt-get dist-upgrade 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following package was automatically installed and is no longer required:
+  python3-pyflatpak
+Use 'sudo apt autoremove' to remove it.
+The following NEW packages will be installed:
+  pop-shell-plugin-system76-power
+The following packages will be upgraded:
+  libdrm-amdgpu1 libdrm-common libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libdrm2 libegl-mesa0 libgbm1 libgl1-mesa-dri libglapi-mesa libglx-mesa0 libxatracker2 linux-generic
+  linux-headers-5.8.0-7630 linux-headers-5.8.0-7630-generic linux-headers-generic linux-image-5.8.0-7630-generic linux-image-generic linux-libc-dev linux-modules-5.8.0-7630-generic
+  linux-modules-extra-5.8.0-7630-generic linux-system76 mesa-va-drivers mesa-vdpau-drivers mesa-vulkan-drivers pop-shell system76-power ubuntu-drivers-common
+28 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 105 MB of archives.
+After this operation, 4,453 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libdrm-common all 2.4.103+git2012121830.d034db~oibaf~g [14.8 kB]
+Get:2 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libdrm2 amd64 2.4.103+git2012121830.d034db~oibaf~g [41.5 kB]
+Get:3 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 ubuntu-drivers-common amd64 1:0.8.6.2pop0~1608586093~20.10~c4d93ab [50.4 kB]
+Get:4 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libdrm-amdgpu1 amd64 2.4.103+git2012121830.d034db~oibaf~g [28.6 kB]
+Get:5 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libdrm-intel1 amd64 2.4.103+git2012121830.d034db~oibaf~g [71.9 kB]
+Get:6 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libdrm-nouveau2 amd64 2.4.103+git2012121830.d034db~oibaf~g [26.7 kB]
+Get:7 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libdrm-radeon1 amd64 2.4.103+git2012121830.d034db~oibaf~g [30.2 kB]
+Get:8 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libglapi-mesa amd64 21.0~git2101011930.7de146~oibaf~g [71.3 kB]
+Get:9 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libglx-mesa0 amd64 21.0~git2101011930.7de146~oibaf~g [184 kB]
+Get:10 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libgl1-mesa-dri amd64 21.0~git2101011930.7de146~oibaf~g [10.3 MB]                                            
+Get:11 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libgbm1 amd64 21.0~git2101011930.7de146~oibaf~g [72.4 kB]                                                    
+Get:12 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libegl-mesa0 amd64 21.0~git2101011930.7de146~oibaf~g [141 kB]                                                
+Get:13 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-modules-5.8.0-7630-generic amd64 5.8.0-7630.32~1609174078~20.10~4b8d17c [15.3 MB]                                
+Get:14 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-modules-extra-5.8.0-7630-generic amd64 5.8.0-7630.32~1609174078~20.10~4b8d17c [40.7 MB]                          
+Get:15 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-headers-5.8.0-7630-generic amd64 5.8.0-7630.32~1609174078~20.10~4b8d17c [1,427 kB]                               
+Get:16 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-headers-generic amd64 5.8.0.7630.32~1609174078~20.10~4b8d17c [222 kB]                                            
+Get:17 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-image-5.8.0-7630-generic amd64 5.8.0-7630.32~1609174078~20.10~4b8d17c [10.9 MB]                                  
+Get:18 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-image-generic amd64 5.8.0.7630.32~1609174078~20.10~4b8d17c [222 kB]                                              
+Get:19 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-generic amd64 5.8.0.7630.32~1609174078~20.10~4b8d17c [222 kB]                                                    
+Get:20 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-system76 amd64 5.8.0.7630.32~1609174078~20.10~4b8d17c [222 kB]                                                   
+Get:21 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-headers-5.8.0-7630 all 5.8.0-7630.32~1609174078~20.10~4b8d17c [11.5 MB]                                          
+Get:22 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 linux-libc-dev amd64 5.8.0-7630.32~1609174078~20.10~4b8d17c [1,334 kB]                                                 
+Get:23 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 mesa-va-drivers amd64 21.0~git2101011930.7de146~oibaf~g [2,781 kB]                                           
+Get:24 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 mesa-vdpau-drivers amd64 21.0~git2101011930.7de146~oibaf~g [2,916 kB]                                        
+Get:25 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 mesa-vulkan-drivers amd64 21.0~git2101011930.7de146~oibaf~g [3,436 kB]                                       
+Get:26 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 pop-shell all 1.1.0~1609457265~20.10~c97b9b2 [181 kB]                                                                  
+Get:27 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 system76-power amd64 1.1.11~1608749509~20.10~7582668 [664 kB]                                                          
+Get:28 http://ppa.launchpad.net/oibaf/graphics-drivers/ubuntu groovy/main amd64 libxatracker2 amd64 21.0~git2101011930.7de146~oibaf~g [1,730 kB]                                             
+Get:29 http://ppa.launchpad.net/system76/pop/ubuntu groovy/main amd64 pop-shell-plugin-system76-power all 1.1.0~1609457265~20.10~c97b9b2 [1,984 B]                                           
+Fetched 105 MB in 4min 30s (388 kB/s)                                                                                                                                                        
+Preconfiguring packages ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libdrm-common_2.4.103+git2012121830.d034db~oibaf~g_all.deb ...
+Unpacking libdrm-common (2.4.103+git2012121830.d034db~oibaf~g) over (2.4.102-1ubuntu1) ...
+Setting up libdrm-common (2.4.103+git2012121830.d034db~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libdrm2_2.4.103+git2012121830.d034db~oibaf~g_amd64.deb ...
+Unpacking libdrm2:amd64 (2.4.103+git2012121830.d034db~oibaf~g) over (2.4.102-1ubuntu1) ...
+Setting up libdrm2:amd64 (2.4.103+git2012121830.d034db~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../ubuntu-drivers-common_1%3a0.8.6.2pop0~1608586093~20.10~c4d93ab_amd64.deb ...
+Unpacking ubuntu-drivers-common (1:0.8.6.2pop0~1608586093~20.10~c4d93ab) over (1:0.8.6.1pop0~1603204571~20.10~e7f8207) ...
+Setting up ubuntu-drivers-common (1:0.8.6.2pop0~1608586093~20.10~c4d93ab) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libdrm-amdgpu1_2.4.103+git2012121830.d034db~oibaf~g_amd64.deb ...
+Unpacking libdrm-amdgpu1:amd64 (2.4.103+git2012121830.d034db~oibaf~g) over (2.4.102-1ubuntu1) ...
+Setting up libdrm-amdgpu1:amd64 (2.4.103+git2012121830.d034db~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libdrm-intel1_2.4.103+git2012121830.d034db~oibaf~g_amd64.deb ...
+Unpacking libdrm-intel1:amd64 (2.4.103+git2012121830.d034db~oibaf~g) over (2.4.102-1ubuntu1) ...
+Setting up libdrm-intel1:amd64 (2.4.103+git2012121830.d034db~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libdrm-nouveau2_2.4.103+git2012121830.d034db~oibaf~g_amd64.deb ...
+Unpacking libdrm-nouveau2:amd64 (2.4.103+git2012121830.d034db~oibaf~g) over (2.4.102-1ubuntu1) ...
+Setting up libdrm-nouveau2:amd64 (2.4.103+git2012121830.d034db~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libdrm-radeon1_2.4.103+git2012121830.d034db~oibaf~g_amd64.deb ...
+Unpacking libdrm-radeon1:amd64 (2.4.103+git2012121830.d034db~oibaf~g) over (2.4.102-1ubuntu1) ...
+Setting up libdrm-radeon1:amd64 (2.4.103+git2012121830.d034db~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libglapi-mesa_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking libglapi-mesa:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up libglapi-mesa:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libglx-mesa0_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking libglx-mesa0:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up libglx-mesa0:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libgl1-mesa-dri_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking libgl1-mesa-dri:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up libgl1-mesa-dri:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libgbm1_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking libgbm1:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up libgbm1:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../libegl-mesa0_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking libegl-mesa0:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up libegl-mesa0:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243623 files and directories currently installed.)
+Preparing to unpack .../linux-modules-5.8.0-7630-generic_5.8.0-7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-modules-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) over (5.8.0-7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-modules-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-modules-extra-5.8.0-7630-generic_5.8.0-7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-modules-extra-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) over (5.8.0-7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-modules-extra-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-headers-5.8.0-7630-generic_5.8.0-7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-headers-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) over (5.8.0-7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-headers-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+/etc/kernel/header_postinst.d/dkms:
+ * dkms: running auto installation service for kernel 5.8.0-7630-generic
+   ...done.
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-headers-generic_5.8.0.7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-headers-generic (5.8.0.7630.32~1609174078~20.10~4b8d17c) over (5.8.0.7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-headers-generic (5.8.0.7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-image-5.8.0-7630-generic_5.8.0-7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-image-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) over (5.8.0-7630.32~1606339263~20.10~61c3910) ...
+/var/lib/dpkg/info/linux-image-5.8.0-7630-generic.postrm ... removing pending trigger
+Setting up linux-image-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-image-generic_5.8.0.7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-image-generic (5.8.0.7630.32~1609174078~20.10~4b8d17c) over (5.8.0.7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-image-generic (5.8.0.7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-generic_5.8.0.7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-generic (5.8.0.7630.32~1609174078~20.10~4b8d17c) over (5.8.0.7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-generic (5.8.0.7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-system76_5.8.0.7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-system76 (5.8.0.7630.32~1609174078~20.10~4b8d17c) over (5.8.0.7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-system76 (5.8.0.7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-headers-5.8.0-7630_5.8.0-7630.32~1609174078~20.10~4b8d17c_all.deb ...
+Unpacking linux-headers-5.8.0-7630 (5.8.0-7630.32~1609174078~20.10~4b8d17c) over (5.8.0-7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-headers-5.8.0-7630 (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../linux-libc-dev_5.8.0-7630.32~1609174078~20.10~4b8d17c_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.8.0-7630.32~1609174078~20.10~4b8d17c) over (5.8.0-7630.32~1606339263~20.10~61c3910) ...
+Setting up linux-libc-dev:amd64 (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../mesa-va-drivers_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking mesa-va-drivers:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up mesa-va-drivers:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../mesa-vdpau-drivers_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking mesa-vdpau-drivers:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up mesa-vdpau-drivers:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../mesa-vulkan-drivers_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking mesa-vulkan-drivers:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Setting up mesa-vulkan-drivers:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+(Reading database ... 243622 files and directories currently installed.)
+Preparing to unpack .../pop-shell_1.1.0~1609457265~20.10~c97b9b2_all.deb ...
+Unpacking pop-shell (1.1.0~1609457265~20.10~c97b9b2) over (1.1.0~1608318806~20.10~19ebae0) ...
+Setting up pop-shell (1.1.0~1609457265~20.10~c97b9b2) ...
+(Reading database ... 243625 files and directories currently installed.)
+Preparing to unpack .../system76-power_1.1.11~1608749509~20.10~7582668_amd64.deb ...
+Unpacking system76-power (1.1.11~1608749509~20.10~7582668) over (1.1.11~1605815418~20.10~b05e8d7) ...
+Setting up system76-power (1.1.11~1608749509~20.10~7582668) ...
+(Reading database ... 243625 files and directories currently installed.)
+Preparing to unpack .../libxatracker2_21.0~git2101011930.7de146~oibaf~g_amd64.deb ...
+Unpacking libxatracker2:amd64 (21.0~git2101011930.7de146~oibaf~g) over (20.2.1-1) ...
+Selecting previously unselected package pop-shell-plugin-system76-power.
+Preparing to unpack .../pop-shell-plugin-system76-power_1.1.0~1609457265~20.10~c97b9b2_all.deb ...
+Unpacking pop-shell-plugin-system76-power (1.1.0~1609457265~20.10~c97b9b2) ...
+Setting up libxatracker2:amd64 (21.0~git2101011930.7de146~oibaf~g) ...
+Processing triggers for linux-image-5.8.0-7630-generic (5.8.0-7630.32~1609174078~20.10~4b8d17c) ...
+/etc/kernel/postinst.d/dkms:
+ * dkms: running auto installation service for kernel 5.8.0-7630-generic
+   ...done.
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-5.8.0-7630-generic
+cryptsetup: WARNING: Resume target cryptswap uses a key file
+kernelstub.Config    : INFO     Looking for configuration...
+kernelstub           : INFO     System information: 
+
+    OS:..................Pop!_OS 20.10
+    Root partition:....../dev/nvme0n1p7
+    Root FS UUID:........ec8e2d83-3d4a-4461-a4ad-38d889eb167b
+    ESP Path:............/boot/efi
+    ESP Partition:......./dev/nvme0n1p5
+    ESP Partition #:.....5
+    NVRAM entry #:.......-1
+    Boot Variable #:.....0000
+    Kernel Boot Options:.quiet loglevel=0 systemd.show_status=false splash
+    Kernel Image Path:.../boot/vmlinuz-5.8.0-7630-generic
+    Initrd Image Path:.../boot/initrd.img-5.8.0-7630-generic
+    Force-overwrite:.....False
+
+kernelstub.Installer : INFO     Copying Kernel into ESP
+kernelstub.Installer : INFO     Copying initrd.img into ESP
+kernelstub.Installer : INFO     Setting up loader.conf configuration
+kernelstub.Installer : INFO     Making entry file for Pop!_OS
+kernelstub.Installer : INFO     Backing up old kernel
+kernelstub.Installer : INFO     No old kernel found, skipping
+/etc/kernel/postinst.d/zz-kernelstub:
+kernelstub.Config    : INFO     Looking for configuration...
+kernelstub           : INFO     System information: 
+
+    OS:..................Pop!_OS 20.10
+    Root partition:....../dev/nvme0n1p7
+    Root FS UUID:........ec8e2d83-3d4a-4461-a4ad-38d889eb167b
+    ESP Path:............/boot/efi
+    ESP Partition:......./dev/nvme0n1p5
+    ESP Partition #:.....5
+    NVRAM entry #:.......-1
+    Boot Variable #:.....0000
+    Kernel Boot Options:.quiet loglevel=0 systemd.show_status=false splash
+    Kernel Image Path:.../boot/vmlinuz-5.8.0-7630-generic
+    Initrd Image Path:.../boot/initrd.img-5.8.0-7630-generic
+    Force-overwrite:.....False
+
+kernelstub.Installer : INFO     Copying Kernel into ESP
+kernelstub.Installer : INFO     Copying initrd.img into ESP
+kernelstub.Installer : INFO     Setting up loader.conf configuration
+kernelstub.Installer : INFO     Making entry file for Pop!_OS
+kernelstub.Installer : INFO     Backing up old kernel
+kernelstub.Installer : INFO     No old kernel found, skipping
+Processing triggers for initramfs-tools (0.137ubuntu12) ...
+update-initramfs: Generating /boot/initrd.img-5.8.0-7630-generic
+cryptsetup: WARNING: Resume target cryptswap uses a key file
+kernelstub.Config    : INFO     Looking for configuration...
+kernelstub           : INFO     System information: 
+
+    OS:..................Pop!_OS 20.10
+    Root partition:....../dev/nvme0n1p7
+    Root FS UUID:........ec8e2d83-3d4a-4461-a4ad-38d889eb167b
+    ESP Path:............/boot/efi
+    ESP Partition:......./dev/nvme0n1p5
+    ESP Partition #:.....5
+    NVRAM entry #:.......-1
+    Boot Variable #:.....0000
+    Kernel Boot Options:.quiet loglevel=0 systemd.show_status=false splash
+    Kernel Image Path:.../boot/vmlinuz-5.8.0-7630-generic
+    Initrd Image Path:.../boot/initrd.img-5.8.0-7630-generic
+    Force-overwrite:.....False
+
+kernelstub.Installer : INFO     Copying Kernel into ESP
+kernelstub.Installer : INFO     Copying initrd.img into ESP
+kernelstub.Installer : INFO     Setting up loader.conf configuration
+kernelstub.Installer : INFO     Making entry file for Pop!_OS
+kernelstub.Installer : INFO     Backing up old kernel
+kernelstub.Installer : INFO     No old kernel found, skipping
+Processing triggers for libglib2.0-0:amd64 (2.66.1-2) ...
+Processing triggers for libc-bin (2.32-0ubuntu3) ...
+Processing triggers for dbus (1.12.20-1ubuntu1) ...
+Setting up pop-shell-plugin-system76-power (1.1.0~1609457265~20.10~c97b9b2) ...
+logos@pop-os:~$ 
+
