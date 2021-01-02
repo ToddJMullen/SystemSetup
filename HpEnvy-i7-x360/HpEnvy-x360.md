@@ -157,7 +157,9 @@ VulkanRHI::vkQueueSubmit(Queue, 1, &SubmitInfo, Fence->GetHandle()) failed, VkRe
 `
 A recommended fix I found for a similar looking error requires a dist upgrad, so I am adding this note & pushing these changes before continuing.  
 `apt-add-repository ppa:oibaf/graphics-drivers && apt-get update && apt-get dist-upgrade`
-
+https://stackoverflow.com/questions/43405720/unreal-engine-crashes-on-startup-on-linux
+See also: https://ue4community.wiki/legacy/building-on-linux-qr8t0si2 
+and https://ue4community.wiki/legacy/running-on-linux-4r2hfjw7
 
 
 
