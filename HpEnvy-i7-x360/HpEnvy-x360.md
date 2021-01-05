@@ -161,10 +161,41 @@ https://stackoverflow.com/questions/43405720/unreal-engine-crashes-on-startup-on
 See also: https://ue4community.wiki/legacy/building-on-linux-qr8t0si2 
 and https://ue4community.wiki/legacy/running-on-linux-4r2hfjw7
 
+There is no noticable difference. Reading through more documentation, I noted that I may not meet all the minimum requirements:  
+`
+Quad-core Intel or AMD processor, 2.5 GHz or faster
+NVIDIA GeForce 470 GTX or AMD Radeon 6870 HD series card or higher
+8 GB RAM
+`
+So, to figure out if I do, I see:  
+`About > Processor > Intel® Core™ i7-10510U CPU @ 1.80GHz × 8 ` I am not sure if this is sufficient processor since it is less GHz, but more cores.
+Graphics card:  
+`About > Graphics > Mesa Intel® UHD Graphics (CML GT2)`
+`lspci | grep VGA` outputs `00:02.0 VGA compatible controller: Intel Corporation UHD Graphics (rev 02)` so this looks to fail.
+Using `sudo lshw -C video` I get
+`*-display
+    description: VGA compatible controller
+    product: UHD Graphics
+    vendor: Intel Corporation
+    physical id: 2
+    bus info: pci@0000:00:02.0
+    version: 02
+    width: 64 bits
+    clock: 33MHz
+    capabilities: pciexpress msi pm vga_controller bus_master cap_list rom
+    configuration: driver=i915 latency=0
+    resources: irq:147 memory:b0000000-b0ffffff memory:a0000000-afffffff ioport:3000(size=64) memory:c0000-dffff.
+`
+Which give more detail, but still no mention of NVIDIA or AMD, so that is not likely sufficient either.  
+However, I will continue trying to see if it will work, since I didn't see any mention of it in the courses I bought.
+
+I installed in `~/Dev/UnrealEngine` and the log files are located at `~/Dev/UnrealEngine/Engine/Saved/Logs/`
 
 
 
-    Ref: [Linux Quick Start](https://docs.unrealengine.com/en-US/SharingAndReleasing/Linux/BeginnerLinuxDeveloper/SettingUpAnUnrealWorkflow/index.html)
+Refs: [Linux Quick Start](https://docs.unrealengine.com/en-US/SharingAndReleasing/Linux/BeginnerLinuxDeveloper/SettingUpAnUnrealWorkflow/index.html)
+
+
 
 - Komodo IDE
  [Komodo IDE](https://www.activestate.com/products/komodo-ide/downloads/edit/)
