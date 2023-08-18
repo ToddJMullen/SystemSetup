@@ -1,0 +1,27 @@
+# Application List
+
+- Ghostwriter
+- Sweet Home 3D
+  - Furniture designer
+  - Texture designer
+- Vivaldi
+- Discord
+- Openshot Video Editor
+- Audacity
+- Think Or Swim
+- Video Downloader
+- Mozilla VPN
+- Solaar
+- Manuskript
+- Inskcape
+- Gimp
+- Blender
+- Freeplane
+- Fraqtive
+- Gbrainy
+- Krita
+- Tiled
+- Flowblade
+- Kden Live
+- Libre CAD
+- Libre Wolf
