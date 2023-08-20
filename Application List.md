@@ -1,11 +1,16 @@
 # Application List
 
+- Nvm
+- Ionic
+- Android Studio
 - Ghostwriter
 - Sweet Home 3D
   - Furniture designer
   - Texture designer
 - Vivaldi
 - Discord
+  - Midjourney
+- FXDS
 - Openshot Video Editor
 - Audacity
 - Think Or Swim
