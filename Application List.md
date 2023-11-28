@@ -5,11 +5,12 @@
 - Android Studio
 - Ghostwriter
 - Sweet Home 3D
-  - Furniture designer
-  - Texture designer
+- Furniture designer
+- Texture designer
 - Vivaldi
+- Opera
 - Discord
-  - Midjourney
+- Midjourney
 - FXDS
 - Openshot Video Editor
 - Audacity
@@ -30,3 +31,6 @@
 - Kden Live
 - Libre CAD
 - Libre Wolf
+- VS Code
+- LBRY
+- 
